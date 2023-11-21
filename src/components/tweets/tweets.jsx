@@ -1,11 +1,31 @@
-// import profi from '../../assets/images/tweet-profile-photo-2';
-// import blabla from 'src/assets/images/profile-photo.png';
-import blabla from '../../assets/images/profile-photo.png';
+import Tweet from './tweet';
+import imageTweet1 from '../../assets/images/tweet-image.png';
+import avatarTweet1 from '../../assets/images/tweet-profile-photo.png';
+import avatarTweet2 from '../../assets/images/tweet-profile-photo-2.png';
+import avatarTweet3 from '../../assets/images/logoX.png';
 
 function Tweets() {
+  const tweetTextParagraphe1 = (
+    <p>
+      President Joe Biden touted a new agreement reached with the European Union
+      to ease Trump-era tariffs on aluminum and steel as a "major breakthrough"
+      that would serve to both strengthen the US steel industry and combat the
+      global climate crisis.
+    </p>
+  );
+  const tweetTextParagraphe2 = (
+    <p>
+      Gardening boomed during the pandemic. Six Black writers share how it has
+      helped them re-establish, and reimagine, a connection to cultivation and
+      the land
+    </p>
+  );
+  const tweetTextParagraphe3 = <p>BIG NEWS lol jk still Twitter</p>;
+  const tweetTextParagraphe4 = <p>Hello litteraly everyone</p>;
+  const tweetTextParagraphe5 = <p>Hello litteraly everyone</p>;
   return (
     <div className="tweets">
-      <div className="tweet">
+      {/* <div className="tweet">
         <div className="tweet-avatar">
           <img
             src="src\assets\images\tweet-profile-photo.png"
@@ -120,7 +140,53 @@ function Tweets() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+      <Tweet
+        tweetTitleAuthor="CNN"
+        tweetTitleDetailsSpan="@CNN . 7m"
+        tweetTextParagraphe={tweetTextParagraphe1}
+        replyValue="57"
+        retweetValue="144"
+        reactValue="184"
+        tweetAvatar={avatarTweet1}
+      />
+      <Tweet
+        tweetTitleAuthor="The New York Times"
+        tweetTitleDetailsSpan="@nytimes . 2h"
+        tweetTextParagraphe={tweetTextParagraphe2}
+        replyValue="19"
+        retweetValue="48"
+        reactValue="482"
+        tweetImage={imageTweet1}
+        tweetAvatar={avatarTweet2}
+      />
+      <Tweet
+        tweetTitleAuthor="Twitter"
+        tweetTitleDetailsSpan="@x . Oct 29"
+        tweetTextParagraphe={tweetTextParagraphe3}
+        replyValue="6.8K"
+        retweetValue="36.6K"
+        reactValue="267.1K"
+        tweetAvatar={avatarTweet3}
+      />
+      <Tweet
+        tweetTitleAuthor="Twitter"
+        tweetTitleDetailsSpan="@x . Oct 4"
+        tweetTextParagraphe={tweetTextParagraphe4}
+        replyValue="118.7K"
+        retweetValue="785.4K"
+        reactValue="3.3M"
+        tweetAvatar={avatarTweet3}
+      />
+      <Tweet
+        tweetTitleAuthor="Twitter"
+        tweetTitleDetailsSpan="@x . Oct 4"
+        tweetTextParagraphe={tweetTextParagraphe5}
+        replyValue="19"
+        retweetValue="48"
+        reactValue="482"
+        tweetAvatar={avatarTweet3}
+      />
     </div>
   );
 }
