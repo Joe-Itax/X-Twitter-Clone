@@ -1,7 +1,9 @@
+import AvatarImage from "../../assets/images/profile-photo.png"
+
 function Avatar() {
   return (
     <div className="avatar">
-      <img src="src\assets\images\profile-photo.png" alt="Avatar" />
+      <img src={AvatarImage} alt="Avatar" />
     </div>
   );
 }

@@ -1,8 +1,9 @@
+import TimelineProp from "../../assets/icons/Timeline-Prop.svg"
 function TopTweet() {
   return (
     <img
-      src="src/assets/Icons/Timeline-Prop.svg"
-      alt="Icon Timeline"
+      src={TimelineProp}
+      alt="Icon Timeline Prop"
       className="top-tweets"
     />
   );
