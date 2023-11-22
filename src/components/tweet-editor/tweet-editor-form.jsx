@@ -1,3 +1,11 @@
+import mediaIcon from "../../assets/icons/Media.svg"
+import gifIcon from "../../assets/icons/Gif.svg"
+import pollIcon from "../../assets/icons/Poll.svg"
+import emojiIcon from "../../assets/icons/Emoji.svg"
+import scheduleIcon from "../../assets/icons/Schedule.svg"
+
+
+
 function Input() {
   return (
     <input
@@ -13,19 +21,19 @@ function TweetEditorButton() {
     <div className="tweet-editor-buttons">
       <div className="tweet-editor-actions">
         <button>
-          <img src="src\assets\Icons\Media.svg" alt="" />
+          <img src={mediaIcon} alt="" />
         </button>
         <button>
-          <img src="src\assets\Icons\Gif.svg" alt="" />
+          <img src={gifIcon} alt="" />
         </button>
         <button>
-          <img src="src\assets\Icons\Poll.svg" alt="" />
+          <img src={pollIcon} alt="" />
         </button>
         <button>
-          <img src="src\assets\Icons\Emoji.svg" alt="" />
+          <img src={emojiIcon} alt="" />
         </button>
         <button>
-          <img src="src\assets\Icons\Schedule.svg" alt="" />
+          <img src={scheduleIcon} alt="" />
         </button>
       </div>
       <button className="button">Tweet</button>
