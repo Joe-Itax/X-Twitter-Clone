@@ -1,9 +1,8 @@
-// import verifiedIcon from "src\assets\icons\Verified.svg"
 // import verifiedIcon from '../../../assets/icons/Verified.svg';
 function TweetBody({
   tweetTitleAuthor,
   tweetTitleDetailsSpan,
-  tweetTextParagraph,
+  tweetText,
   tweetImage,
 }) {
   return (
@@ -27,7 +26,7 @@ function TweetBody({
           <span>{tweetTitleDetailsSpan}</span>
         </div>
       </div>
-      <div className="tweet-text">{tweetTextParagraph}</div>
+      <div className="tweet-text">{tweetText}</div>
       <div className="tweet-image">
         {tweetImage && <img src={tweetImage} alt="Tweet image" />}
       </div>
