@@ -20,52 +20,52 @@ function Sidebar() {
           </div>
         </li>
         <li>
-          <a href="#">
+          <NavLink to="/home">
             <img src={homeIcon} />
             <span className="link-name">Home</span>
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a href="#">
+          <NavLink to="#">
             <img src={exploreIcon} />
             <span className="link-name">Explore</span>
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a href="#">
+          <NavLink to="#">
             <img src={notifIcon} />
             <span className="link-name">Notification</span>
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a href="#">
+          <NavLink to="#">
             <img src={messagesIcon} />
             <span className="link-name">Messages</span>
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a href="#">
+          <NavLink to="#">
             <img src={bookmarksIcon} />
             <span className="link-name">Bookmarks</span>
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a href="#">
+          <NavLink to="#">
             <img src={listIcon} />
             <span className="link-name">Lists</span>
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a href="#">
+          <NavLink to="/profil">
             <img src={profilIcon} />
             <span className="link-name">Profil</span>
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a href="#">
+          <NavLink to="#">
             <img src={moreIcon} />
             <span className="link-name">More</span>
-          </a>
+          </NavLink>
         </li>
       </ul>
     </aside>

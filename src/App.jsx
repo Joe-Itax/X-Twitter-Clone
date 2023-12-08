@@ -1,17 +1,36 @@
+import React from 'react';
+import { Navigate } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './pages/home.jsx';
+import Profil from './pages/profil.jsx';
 import Layout from './components/layout.jsx';
-import Sidebar from './components/sidebar/sidebar.jsx';
 // Remix icon
 import 'remixicon/fonts/remixicon.css';
 
 import('./style/reset.css');
 import('./style/App.css');
 
+const routes = createBrowserRouter([
+  {
+    path: '/',
+    element: <Layout />,
+    children: [
+      {
+        path: '/',
+        element: <Navigate replace to="/home" />,
+      },
+      {
+        path: '/home',
+        element: <Home />,
+      },
+      {
+        path: '/profil',
+        element: <Profil />,
+      }
+    ]
+  }
+])
+
 export default function App() {
-  return (
-    <Layout>
-      <Sidebar />
-      <Home />
-    </Layout>
-  );
+  return <RouterProvider router={routes} />
 }
