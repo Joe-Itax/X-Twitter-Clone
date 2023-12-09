@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
-// import twitterLogo from '../../assets/images/logoX.png';
-import twitterLogo from '../../assets/icons/Twitter.svg';
+import twitterLogo from '../../assets/images/logoX.png';
+// import twitterLogo from '../../assets/icons/Twitter.svg';
 import homeIcon from '../../assets/icons/Home-Fill.svg';
 import exploreIcon from '../../assets/icons/Explore.svg';
 import notifIcon from '../../assets/icons/Notifications.svg';
@@ -15,9 +15,9 @@ function Sidebar() {
     <aside className="sidebar">
       <ul className="nav-links">
         <li>
-          <div className="sidebar-btn-container">
+          <NavLink to="/home">
             <img src={twitterLogo} />
-          </div>
+          </NavLink>
         </li>
         <li>
           <NavLink to="/home">

@@ -1,0 +1,69 @@
+.tweet-actions .tweet-action{
+  cursor: pointer;
+  position: relative;
+}
+
+.tweet-actions .tweet-action svg{
+  width: 24px;
+  height: 24px;
+  transition: all .2s ease-in-out;
+  border-radius: 50%;
+}
+
+.tweet-actions .tweet-action .svg-border {
+  /* position: absolute;
+  top: -7px;
+  left: -7px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  
+  background-color: rgba(29,155,240, .3); */
+  transition: all .8 ease-in-out;
+}
+
+.tweet-actions .tweet-action .hoverReplyIcon{
+  transition: all .8 ease-in-out;
+}
+
+.tweet-actions .tweet-action .hoverReplyIcon:hover + .svg-border{
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: all .8 ease-in-out;
+  background-color: rgba(29,155,240, .3);
+}
+
+.tweet-actions .tweet-action span{
+  transition: all .3 ease-in-out;
+}
+/* 
+.tweet-actions .tweet-action .hoverReplyIcon ~ .svg-border,
+.tweet-actions .tweet-action .hoverShareIcon ~ .svg-border{
+   
+  z-index: -1;
+}
+
+.tweet-actions .tweet-action .hoverReplyIcon,
+.tweet-actions .tweet-action .hoverShareIcon{
+  border-radius: 50%;
+  background-color: rgba(29,155,240, .3);
+}
+
+.hoverRetweetIcon
+
+.tweet-actions .tweet-action .hoverReplyIcon path,
+.tweet-actions .tweet-action .hoverShareIcon path{
+  fill: #1da1f2;
+}
+
+.tweet-actions .tweet-action .hoverReactIcon path{
+  fill: #1da1f2;
+}
+
+.tweet-actions .tweet-action .hoverReplyText{
+  color: #1da1f2;
+} */

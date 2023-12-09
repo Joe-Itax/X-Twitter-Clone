@@ -13,7 +13,7 @@ function TweetCreator() {
       tweetText: (<p>President Joe Biden touted a new agreement reached with the European Union to ease Trump-era tariffs on aluminum and steel as a 'major breakthrough' that would serve to both strengthen the US steel industry and combat the global climate crisis.</p>),
       replyValue: "57",
       retweetValue: "144",
-      reactValue: "184",
+      reactValue: 184,
       tweetImage: null,
       tweetAvatar: avatarTweet1
     },
@@ -24,7 +24,7 @@ function TweetCreator() {
       tweetText: ((<p>Gardening boomed during the pandemic. Six Black writers share how it has helped them re-establish, and reimagine, a connection to cultivation and the land</p>)),
       replyValue: "19",
       retweetValue: "48",
-      reactValue: "482",
+      reactValue: 482,
       tweetImage: imageTweet1,
       tweetAvatar: avatarTweet2
     },
@@ -35,7 +35,7 @@ function TweetCreator() {
       tweetText: ((<p>BIG NEWS lol jk still Twitter</p>)),
       replyValue: "6.8K",
       retweetValue: "36.6K",
-      reactValue: "267.1K",
+      reactValue: 267,
       tweetImage: null,
       tweetAvatar: avatarTweet3
     },
@@ -46,7 +46,7 @@ function TweetCreator() {
       tweetText: ((<p>Hello litteraly everyone</p>)),
       replyValue: "118.7K",
       retweetValue: "785.4K",
-      reactValue: "3.3M",
+      reactValue: 375,
       tweetImage: null,
       tweetAvatar: avatarTweet3
     },
@@ -57,7 +57,7 @@ function TweetCreator() {
       tweetText: ((<p>Hello litteraly everyone</p>)),
       replyValue: "118.7K",
       retweetValue: "785.4K",
-      reactValue: "3.3M",
+      reactValue: 3105,
       tweetImage: null,
       tweetAvatar: avatarTweet3
     }
