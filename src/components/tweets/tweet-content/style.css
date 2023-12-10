@@ -10,18 +10,68 @@
   border-radius: 50%;
 }
 
+.tweet-actions .tweet-action svg path{
+  fill: #71767b;
+  transition: all .3s ease-in-out;
+}
+
 .tweet-actions .tweet-action .svg-border {
-  /* position: absolute;
+  position: absolute;
   top: -7px;
   left: -7px;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  
-  background-color: rgba(29,155,240, .3); */
-  transition: all .8 ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
+.tweet-actions .tweet-action span{
+  transition: all .3s ease-in-out;
+}
+
+.tweet-actions .hoverReply:hover .svg-border,
+.tweet-actions .hoverShare:hover .svg-border{
+  background-color: rgba(29,155,240, .3); 
+}
+
+.tweet-actions .hoverShare:hover svg path,
+.tweet-actions .hoverReply:hover svg path{
+  fill: #1DA1F2
+}
+
+.tweet-actions .hoverReply:hover .hoverReplyText{
+  color: #1DA1F2;
+}
+
+.tweet-actions .hoverRetweet:hover .hoverRetweetText{
+  color: #1DA;
+}
+
+.tweet-actions .hoverRetweet:hover .svg-border{
+  background-color: rgba(17,221,170, .3); 
+}
+
+.tweet-actions .hoverRetweet:hover svg path{
+  fill: #1DA;
+}
+
+.tweet-actions .hoverReact:hover .hoverReactText{
+  color: rgb(248, 73, 137);
+}
+
+.tweet-actions .hoverReact:hover .svg-border{
+  background-color: rgba(248, 73, 137, .3); 
+}
+
+.tweet-actions .isLikedBox .isLiked{
+  color: rgb(248, 73, 137);
+}
+
+.tweet-actions .isLikedBox .svg-border{
+  background-color: rgba(248, 73, 137, .3); 
+}
+/*
+221,46,68248,73,137
 .tweet-actions .tweet-action .hoverReplyIcon{
   transition: all .8 ease-in-out;
 }
@@ -40,7 +90,7 @@
 .tweet-actions .tweet-action span{
   transition: all .3 ease-in-out;
 }
-/* 
+ 
 .tweet-actions .tweet-action .hoverReplyIcon ~ .svg-border,
 .tweet-actions .tweet-action .hoverShareIcon ~ .svg-border{
    
@@ -61,7 +111,7 @@
 }
 
 .tweet-actions .tweet-action .hoverReactIcon path{
-  fill: #1da1f2;
+  fill: #d9d9d9;
 }
 
 .tweet-actions .tweet-action .hoverReplyText{
