@@ -38,7 +38,7 @@
 
 .tweet-actions .hoverReply:hover .svg-border,
 .tweet-actions .hoverShare:hover .svg-border{
-  background-color: rgba(29,155,240, .3); 
+  background-color: rgba(29,155,240, .2); 
 }
 
 .tweet-actions .hoverShare:hover svg path,
@@ -55,7 +55,7 @@
 }
 
 .tweet-actions .hoverRetweet:hover .svg-border{
-  background-color: rgba(17,221,170, .3); 
+  background-color: rgba(17,221,170, .2); 
 }
 
 .tweet-actions .hoverRetweet:hover svg path,{
@@ -72,9 +72,27 @@
 }
 
 .tweet-actions .hoverReact:hover .svg-border{
-  background-color: rgba(248, 73, 137, .3); 
+  background-color: rgba(248, 73, 137, .2); 
 }
 
-.tweet-actions .isLikedBox .svg-border{
-  background-color: rgba(248, 73, 137, .3); 
+.tweet-actions .isLikedBox:hover .svg-border{
+  background-color: rgba(248, 73, 137, .2); 
+}
+
+
+/* Tweet body */
+.tweet-body .tweet-title a{
+  display: flex;
+  gap:.5rem;
+  color: #fff;
+}
+.tweet-body .tweet-title a,
+.tweet-body .tweet-title svg{
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+  text-decoration: none;
+}
+
+.tweet-body .tweet-title a:hover{
+  text-decoration: underline;
 }

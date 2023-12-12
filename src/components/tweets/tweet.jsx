@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import TweetActions from './tweet-content/tweet-actions';
 import TweetBody from './tweet-content/tweet-body';
 function Tweet({
@@ -14,7 +15,9 @@ function Tweet({
   return (
     <div className="tweet">
       <div className="tweet-avatar">
-        {tweetAvatar && <img src={tweetAvatar} alt="tweet avatar" />}
+        <Link to={`/home`} className={`tweet-title-author`}>
+          <img src={tweetAvatar} alt="tweet avatar" />
+        </Link>
       </div>
       <div className="tweet-content">
         <TweetBody

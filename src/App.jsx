@@ -24,7 +24,7 @@ const routes = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: '/profil',
+        path: ':slug',
         element: <Profil />,
       }
     ]

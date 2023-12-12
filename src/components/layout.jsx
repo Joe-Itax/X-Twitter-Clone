@@ -9,7 +9,7 @@ function Layout({ children }) {
       {/* <div className="left-sidebar" />
       {children}
       <div className="right-sidebar" /> */}
-      <Sidebar className="left-sidebar"/>
+      <Sidebar className="left-sidebar" />
       <main>
         <Outlet />
       </main>
