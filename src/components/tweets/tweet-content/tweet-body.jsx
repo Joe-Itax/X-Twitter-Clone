@@ -1,24 +1,21 @@
 // import verifiedIcon from '../../../assets/icons/Verified.svg';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
-import { useParams } from 'react-router-dom';
-import TweetData from '../../../utils/tweet-data';
 import "./style.css"
+
+
 function TweetBody({
   tweetTitleAuthor,
-  tweetTitleDetailsSpan,
+  userName,
+  dateTime,
   tweetText,
   tweetImage,
+  slug
 }) {
 
-  // const { slug } = useParams();
-  const linkProfils = TweetData.getTweets();
-
-  // const linkProfil = linkProfils.find((profil) => profil.slug === slug);
   return (
     <div className="tweet-body">
       <div className="tweet-title">
-        <Link to={`/home`} className={`tweet-title-author`}>
+        <Link to={`/${slug}`} className={`tweet-title-author`}>
           <h3>{tweetTitleAuthor}</h3>
           <svg
             width="24"
@@ -34,7 +31,11 @@ function TweetBody({
           </svg>
         </Link>
         <div className="tweet-title-details">
-          <span>{tweetTitleDetailsSpan}</span>
+          <Link to={`/${slug}`} className={`username-link`}>
+            <span className="userName">{userName}</span>
+          </Link>
+          <span className="dotSeparate"> . </span>
+          <span className="dateTime">{dateTime}</span>
         </div>
       </div>
       <div className="tweet-text">

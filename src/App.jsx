@@ -26,6 +26,12 @@ const routes = createBrowserRouter([
       {
         path: ':slug',
         element: <Profil />,
+        // children: [
+        //   {
+        //     path: '/',
+        //     element: <Navigate replace to=":slug" />,
+        //   }
+        // ]
       }
     ]
   }

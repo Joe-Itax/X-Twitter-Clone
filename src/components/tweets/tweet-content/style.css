@@ -96,3 +96,26 @@
 .tweet-body .tweet-title a:hover{
   text-decoration: underline;
 }
+
+.tweet-body .tweet-title .tweet-title-details{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.tweet-body .tweet-title .tweet-title-details .username-link{
+  color: inherit;
+}
+.tweet-body .tweet-title .tweet-title-details .username-link:hover{
+  text-decoration: none;
+}
+
+.tweet-body .tweet-title .tweet-title-details .userName,
+.tweet-body .tweet-title .tweet-title-details .dateTime{
+  cursor: pointer;
+}
+
+.tweet-body .tweet-title .tweet-title-details .dateTime:hover{
+  text-decoration: underline;
+}

@@ -9,15 +9,17 @@ function Tweets() {
     <div className="tweets">
       {tweetCreator.map(tweet => (
         <Tweet
-          key={tweetCreator.id}
+          key={tweet.id}
           tweetTitleAuthor={tweet.tweetTitleAuthor}
-          tweetTitleDetailsSpan={tweet.tweetTitleDetailsSpan}
+          userName={tweet.userName}
+          dateTime={tweet.dateTime}
           tweetText={tweet.tweetText}
           replyValue={tweet.replyValue}
           retweetValue={tweet.retweetValue}
           reactValue={tweet.reactValue}
           tweetImage={tweet.tweetImage}
           tweetAvatar={tweet.tweetAvatar}
+          slug={tweet.slug}
         />
       ))}
     </div>

@@ -3,7 +3,8 @@ import TweetActions from './tweet-content/tweet-actions';
 import TweetBody from './tweet-content/tweet-body';
 function Tweet({
   tweetTitleAuthor,
-  tweetTitleDetailsSpan,
+  userName,
+  dateTime,
   tweetText,
   replyValue,
   retweetValue,
@@ -11,20 +12,23 @@ function Tweet({
   shareValue,
   tweetImage,
   tweetAvatar,
+  slug
 }) {
   return (
     <div className="tweet">
       <div className="tweet-avatar">
-        <Link to={`/home`} className={`tweet-title-author`}>
+        <Link to={`/${slug}`} className={`tweet-title-author`}>
           <img src={tweetAvatar} alt="tweet avatar" />
         </Link>
       </div>
       <div className="tweet-content">
         <TweetBody
           tweetTitleAuthor={tweetTitleAuthor}
-          tweetTitleDetailsSpan={tweetTitleDetailsSpan}
           tweetText={tweetText}
           tweetImage={tweetImage}
+          userName={userName}
+          dateTime={dateTime}
+          slug={slug}
         />
         <TweetActions
           replyValue={replyValue}
