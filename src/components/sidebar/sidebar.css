@@ -4,6 +4,9 @@
   flex: 0 0 300px;
   position: sticky;
   top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .nav-sidebar ul{
@@ -56,3 +59,58 @@
   color: #e7e9ea;
   font-size: 1.3rem;
 }
+
+.nav-sidebar .my-profil{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  padding: .5rem 1rem 1rem 3rem;
+  border-radius: 50px;
+  width: 100%;
+}
+
+.nav-sidebar .my-profil:hover{
+  background-color: #1c1c1c;
+  /* background: rgba(255, 255, 255, .04); */
+}
+
+.my-profil-title-box{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* background: #999; */
+  /* background: rgba(255, 255, 255, .04); */
+}
+
+.my-profil-title-box .detail-title-profil{
+  font-size: 1rem;
+  line-height: 20px;
+}
+
+.my-profil-title-box .detail-title-profil .title-profil{
+  font-weight: 700;
+}
+
+/* 
+
+.trends .trends__who-follow-content:hover{
+  background: rgba(255, 255, 255, .04);
+}
+
+.trends .trends__who-follow-content .link-to-profil{
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.trends .trends__who-follow-content .link-to-profil .title-profil{
+  display: flex;
+  gap: 5px;
+}
+
+.trends .trends__who-follow-content .link-to-profil .title-profil:hover span{
+  text-decoration: underline;
+} */

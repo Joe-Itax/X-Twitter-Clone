@@ -9,6 +9,8 @@ import bookmarksIcon from '../../assets/icons/Bookmarks.svg';
 import listIcon from '../../assets/icons/Lists.svg';
 import profilIcon from '../../assets/icons/Profile.svg';
 import moreIcon from '../../assets/icons/More.svg';
+import verified from '../../assets/icons/Verified.svg';
+import Avatar from "../../assets/images/profile-photo.png"
 import Button from "../Buttons/button"
 import './sidebar.css';
 
@@ -75,6 +77,23 @@ function Sidebar() {
           </NavLink>
         </li>
       </ul>
+      <div className="my-profil">
+        <div className="my-profil-title-box">
+          <div style={{ display: 'flex' }}>
+            <img alt="Avatar" src={Avatar} style={{ width: '4rem' }} />
+          </div>
+          <div className="detail-title-profil">
+            <div className="title-profil">
+              <span>Joe Itax</span>
+              {/* <img alt="" src={verified} style={{ width: "1rem" }} /> */}
+            </div>
+            <span className="text-gray">@Joseph_Itakala</span>
+          </div>
+        </div>
+        <div>
+          <i class="ri-more-line"></i>
+        </div>
+      </div>
     </nav>
   );
 }
