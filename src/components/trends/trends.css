@@ -1,5 +1,5 @@
 .right-sidebar{
-  flex: 0 0 240px;
+  flex: 0 0 450px;
   /* position: sticky; */
   top: 0;
   right: 0;
@@ -8,7 +8,7 @@
 }
 
 .trends{
-  /* position: sticky; */
+  position: sticky;
   top: 0;
   right: 0;
   padding: 0rem 0rem 0 0rem;
@@ -33,16 +33,19 @@
   /* background: red; */
 }
 
-.bg__gray{
+.trends .bg__gray{
   background-color: #202327;
+}
+
+.trends .text-gray{
+  color: #71767B;
 }
 
 .trends .trends-header .trends-header-input{
   display: flex;
   align-content: center;
-  justify-content: center;
+  justify-content: stretch;
    width: 100%;
-  padding-left: .5rem 19rem;
   border-radius: 50px;
   border: 1px solid transparent;
   transition: all .2s ease-in-out;
@@ -60,9 +63,12 @@
   font-size: 1rem;
   height: auto;
   align-self: center;
-  padding: 1rem;
+  padding: .5rem;
   padding-left: 0;
-  border-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  width: 100%;
+  /* background: red; */
 }
 
 .trends .trends-header .trends-header-input input::placeholder,
@@ -73,7 +79,12 @@ color: #71767b;
 
 .trends .trends-header .trends-header-input label{
   align-self: center;
-  padding: .8rem;
+  padding: .3rem;
+  padding-right: .5rem;
+  padding-left: .8rem;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  /* background: blue; */
 }
 
 .trends .trends-header .trends-header-input .ri-search-line{
@@ -97,8 +108,141 @@ color: #1986c1;
   margin-top: 1rem;
 }
 
-.trends .trends-title{
+.trends .trends-title,
+.trends .trends__trends-title,
+.trends .trends__trends-icon_parameter{
   font-size: 1.2rem;
   font-weight: 800;
   line-height: 24px;
+}
+
+.trends .trends__trends,
+.trends .trends__who-follow{
+display: flex;
+  /* padding: 12px 1rem; */
+  border-radius: 10px;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.trends .trends__trends .trends__trends-title-box,
+.trends .trends__who-follow .trends__trends-title-box{
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 1rem;
+}
+
+.trends .trends__trends .trends__trends-title-box .trends__trends-icon_parameter{
+  font-weight: 500;
+}
+
+.trends .trends__trends-content{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+  padding: 12px 1rem;
+  transition: all .3s ease-in-out;
+}
+
+.trends .trends__trends-content:hover,
+.trends .show-more:hover{
+  background: rgba(255, 255, 255, .04);
+}
+
+.trends .trends__trends-content .trends__trends-content-details-box{
+display: flex;
+  justify-content: space-between;
+  align-content: flex-start;
+}
+
+.trends .trends__trends-content .trends__trends-content-details-box .trends__trends-content-details{
+  display: flex;
+  flex-direction: column
+}
+
+.trends .trends__trends-content .trends__trends-content-details-box .trends__trends-content-details .trending-theme{
+  font-weight: 800;
+  font-size: .98rem;
+}
+
+.trends .trends__trends-content .trends__trends-content-details-box .trends__trends-content-details span:not(.trending-theme){
+  font-size: 13px;
+}
+
+.trends .trends__trends-content .trends__trends-content-details-box .icon_more i{
+font-weight: 800;
+  font-size: 1.15rem;
+  border-radius: 50%;
+  padding: .5rem;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+
+.trends .trends__trends-content .trends__trends-content-details-box .icon_more i:hover{
+  color: rgba(29,155,240, 1); 
+  background-color: rgba(29,155,240, .2); 
+}
+
+.trends .show-more{
+text-decoration: none;
+  color: rgba(29,155,240, 1); 
+  /* color: #1D9BF0; */
+  padding: 12px 1rem;
+  font-size: .98rem;
+  transition: all .3s ease-in-out;
+}
+
+.trends .trends__who-follow-content{
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 12px 1rem;
+}
+
+.trends .trends__who-follow-content:hover{
+  background: rgba(255, 255, 255, .04);
+}
+
+.trends .trends__who-follow-content .link-to-profil{
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.trends .trends__who-follow-content .link-to-profil .title-profil{
+  display: flex;
+  gap: 5px;
+}
+
+.trends .trends__who-follow-content .link-to-profil .title-profil:hover span{
+  text-decoration: underline;
+}
+
+.trends .trends__trends-more{
+  padding: 0 1rem;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.trends .trends__trends-more *{
+  text-decoration: none;
+  color: #71767B;
+  font-size: 13px;
+  padding-right: 10px;
+  line-height: 16px;
+  font-weight: 500;
+  transition: all .3s ease-in-out;
+}
+
+.trends .trends__trends-more *:not(.copyright){
+  cursor: pointer;
+}
+
+.trends .trends__trends-more *:hover:not(.copyright){
+  text-decoration: underline;
 }

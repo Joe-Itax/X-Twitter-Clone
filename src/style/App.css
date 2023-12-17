@@ -182,7 +182,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5rem;
+  gap: 3rem;
   color: grey;
   font-size: 1rem;
 }
@@ -197,5 +197,5 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 6px;
 }
