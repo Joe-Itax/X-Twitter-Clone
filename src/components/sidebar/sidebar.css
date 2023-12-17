@@ -46,15 +46,6 @@
 
 .nav-sidebar ul li a.post-button .post-button--button{
   width: 100%;
-  text-transform: capitalize;
-  padding: 1rem .7rem;
-  border: none;
-  border-radius: 50px;
-  background-color: #1d9bf0;
-  color: white;
-  font-size: 1.2rem;
-  font-weight: bold;
-  cursor: pointer;
 }
 
 .nav-sidebar ul li a img{

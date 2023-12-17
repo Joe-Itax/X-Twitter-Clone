@@ -9,7 +9,7 @@ import bookmarksIcon from '../../assets/icons/Bookmarks.svg';
 import listIcon from '../../assets/icons/Lists.svg';
 import profilIcon from '../../assets/icons/Profile.svg';
 import moreIcon from '../../assets/icons/More.svg';
-import PostButton from './post-button';
+import Button from "../Buttons/button"
 import './sidebar.css';
 
 function Sidebar() {
@@ -71,7 +71,7 @@ function Sidebar() {
         </li>
         <li className="post-button-li">
           <NavLink to="/compose/tweet" className="post-button">
-            <PostButton />
+            <Button addClassName="post-button--button" content="Post" backgroundColor="#1d9bf0" textColor="#fff" />
           </NavLink>
         </li>
       </ul>

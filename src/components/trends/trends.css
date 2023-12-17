@@ -1,0 +1,104 @@
+.right-sidebar{
+  flex: 0 0 240px;
+  /* position: sticky; */
+  top: 0;
+  right: 0;
+  padding: 0 4rem 0 2rem;
+  /* height: 100%; */
+}
+
+.trends{
+  /* position: sticky; */
+  top: 0;
+  right: 0;
+  padding: 0rem 0rem 0 0rem;
+  /* background: blueviolet; */
+  display: flex;
+  flex-direction: column;
+  flex-basis: auto;
+  flex-shrink: 0;
+  height: auto;
+}
+
+.trends .trends-header{
+  position: sticky;
+  top: 0;
+  right: 0;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background-color: rgba(0,0,0);
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+  z-index: 100;
+  /* background: red; */
+}
+
+.bg__gray{
+  background-color: #202327;
+}
+
+.trends .trends-header .trends-header-input{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+   width: 100%;
+  padding-left: .5rem 19rem;
+  border-radius: 50px;
+  border: 1px solid transparent;
+  transition: all .2s ease-in-out;
+}
+
+.trends .trends-header .inputFocus{
+  border-color: #1986c1;
+}
+
+.trends .trends-header .trends-header-input input{
+  background: none;
+  border: none;
+  outline: none;
+  color: #fefefe;
+  font-size: 1rem;
+  height: auto;
+  align-self: center;
+  padding: 1rem;
+  padding-left: 0;
+  border-radius: 50px;
+}
+
+.trends .trends-header .trends-header-input input::placeholder,
+.trends .trends-header .trends-header-input .ri-search-line {
+color: #71767b;
+  font-size: 1rem;
+}
+
+.trends .trends-header .trends-header-input label{
+  align-self: center;
+  padding: .8rem;
+}
+
+.trends .trends-header .trends-header-input .ri-search-line{
+  font-size: 1.5rem;
+  transition: all .2s ease-in-out;
+  
+}
+
+.trends .trends-header .inputFocus .ri-search-line{
+color: #1986c1;
+}
+
+.trends .trends-subs_premium{
+  padding: 12px 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.trends .trends-title{
+  font-size: 1.2rem;
+  font-weight: 800;
+  line-height: 24px;
+}
