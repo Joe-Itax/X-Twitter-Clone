@@ -1,11 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
 
 body {
   background-color: black;
   color: white;
   margin: 0 auto;
   max-width: 1800px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 #root {
@@ -24,7 +28,7 @@ body {
   padding: 1.5rem 1rem;
   position: sticky;
   top: 0;
-  background-color: rgba(0,0,0, .0);
+  background-color: rgba(0, 0, 0, 0);
   backdrop-filter: blur(50px);
   -webkit-backdrop-filter: blur(50px);
   z-index: 100;

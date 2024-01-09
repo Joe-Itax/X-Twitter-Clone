@@ -1,18 +1,18 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 // import twitterLogo from '../../assets/images/logoX.png';
-import twitterLogo from '../../assets/icons/Twitter.svg';
-import homeIcon from '../../assets/icons/Home-Fill.svg';
-import exploreIcon from '../../assets/icons/Explore.svg';
-import notifIcon from '../../assets/icons/Notifications.svg';
-import messagesIcon from '../../assets/icons/Messages.svg';
-import bookmarksIcon from '../../assets/icons/Bookmarks.svg';
-import listIcon from '../../assets/icons/Lists.svg';
-import profilIcon from '../../assets/icons/Profile.svg';
-import moreIcon from '../../assets/icons/More.svg';
-import verified from '../../assets/icons/Verified.svg';
-import Avatar from "../../assets/images/profile-photo.png"
-import Button from "../Buttons/button"
-import './sidebar.css';
+import twitterLogo from "../../assets/icons/Twitter.svg";
+import homeIcon from "../../assets/icons/Home-Fill.svg";
+import exploreIcon from "../../assets/icons/Explore.svg";
+import notifIcon from "../../assets/icons/Notifications.svg";
+import messagesIcon from "../../assets/icons/Messages.svg";
+import bookmarksIcon from "../../assets/icons/Bookmarks.svg";
+import listIcon from "../../assets/icons/Lists.svg";
+import profilIcon from "../../assets/icons/Profile.svg";
+import moreIcon from "../../assets/icons/More.svg";
+import verified from "../../assets/icons/Verified.svg";
+import Avatar from "../../assets/images/profile-photo.png";
+import Button from "../Buttons/button";
+import "./sidebar.css";
 
 function Sidebar() {
   return (
@@ -73,14 +73,19 @@ function Sidebar() {
         </li>
         <li className="post-button-li">
           <NavLink to="/compose/tweet" className="post-button">
-            <Button addClassName="post-button--button" content="Post" backgroundColor="#1d9bf0" textColor="#fff" />
+            <Button
+              addClassName="post-button--button"
+              content="Post"
+              backgroundColor="#1d9bf0"
+              textColor="#fff"
+            />
           </NavLink>
         </li>
       </ul>
       <div className="my-profil">
         <div className="my-profil-title-box">
-          <div style={{ display: 'flex' }}>
-            <img alt="Avatar" src={Avatar} style={{ width: '4rem' }} />
+          <div style={{ display: "flex" }}>
+            <img alt="Avatar" src={Avatar} style={{ width: "4rem" }} />
           </div>
           <div className="detail-title-profil">
             <div className="title-profil">
@@ -91,7 +96,7 @@ function Sidebar() {
           </div>
         </div>
         <div>
-          <i class="ri-more-line"></i>
+          <i className="ri-more-line"></i>
         </div>
       </div>
     </nav>
