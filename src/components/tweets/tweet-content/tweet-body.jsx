@@ -13,11 +13,11 @@ function TweetBody({
 }) {
 
   return (
-    <div className="tweet-body">
-      <div className="tweet-title">
-        <Link to={`/${slug}`} className={`tweet-title-author`}>
+    <div className="tweet-body flex flex-col gap-2">
+      <div className="tweet-title flex justify-start items-start gap-2.5 text-base">
+        <Link to={`/${slug}`} className={`tweet-title-author text-base`}>
           <h3>{tweetTitleAuthor}</h3>
-          <svg
+          <svg className="w-[1.2rem] h-auto"
             width="24"
             height="24"
             viewBox="0 0 24 24"
@@ -30,7 +30,7 @@ function TweetBody({
             />
           </svg>
         </Link>
-        <div className="tweet-title-details">
+        <div className="tweet-title-details text-[#6e767d]">
           <Link to={`/${slug}`} className={`username-link`}>
             <span className="userName">{userName}</span>
           </Link>
@@ -38,11 +38,11 @@ function TweetBody({
           <span className="dateTime">{dateTime}</span>
         </div>
       </div>
-      <div className="tweet-text">
+      <div className="tweet-text text-[#d9d9d9] text-base">
         <p>{tweetText}</p>
       </div>
-      <div className="tweet-image">
-        {tweetImage && <img src={tweetImage} alt="Tweet image" />}
+      <div className="tweet-image w-full pt-[0.3rem] pb-0 px-0">
+        {tweetImage && <img src={tweetImage} alt="Tweet image" className="max-w-full h-auto border rounded-[50px] border-[#2f3336] border-solid"/>}
       </div>
     </div>
   );

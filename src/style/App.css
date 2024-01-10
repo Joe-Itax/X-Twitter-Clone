@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
 
 body {
   background-color: black;
@@ -18,7 +17,7 @@ body {
   justify-content: space-between;
 }
 
-.timeline {
+/*.timeline {
   flex: 0 0 800px;
   border-left: 1px solid #2f3336;
   border-right: 1px solid #2f3336;
@@ -59,7 +58,7 @@ body {
 
 .avatar {
   flex: 0 0 70px;
-  /*padding: 0 rem;*/
+  /*padding: 0 rem;*
 }
 
 .avatar img {
@@ -95,7 +94,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  /*padding: 0.8rem 0;*/
+  /*padding: 0.8rem 0;*
   gap: 1rem;
 }
 .tweet-editor-actions button {
@@ -110,7 +109,7 @@ body {
   background-color: #1d9bf0;
   color: white;
   font-size: 1rem; 
-  Ce CSS est renvoyé au composant "Button"*/
+  Ce CSS est renvoyé au composant "Button"*
 }
 .tweet {
   display: flex;
@@ -123,7 +122,7 @@ body {
 
 .tweet-avatar {
   /*height: 70px;*/
-  /*width: 70px;*/
+  /*width: 70px;*
   flex: 0 0 70px;
 }
 
@@ -132,6 +131,7 @@ body {
   max-height: 100px;
   border-radius: 100%;
 }
+
 .tweet-content {
   display: flex;
   flex-direction: column;
@@ -140,11 +140,13 @@ body {
   gap: 30px;
   width: 100%;
 }
+
 .tweet-body {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
+
 .tweet-title {
   display: flex;
   justify-content: flex-start;
@@ -157,12 +159,15 @@ body {
   width: 1.2rem;
   height: auto;
 }
+
 .tweet-title-author {
   font-size: 1rem;
 }
+
 .tweet-title-details {
   color: #6e767d;
 }
+
 .tweet-text {
   color: #d9d9d9;
   font-size: 1rem;
@@ -203,3 +208,4 @@ body {
   justify-content: center;
   gap: 6px;
 }
+*/

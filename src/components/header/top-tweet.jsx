@@ -6,7 +6,7 @@ function TopTweet() {
     <img
       src={TimelineProp}
       alt="Icon Timeline Prop"
-      className="top-tweets"
+      className="top-tweets w-6 h-auto"
     />
   );
 }
