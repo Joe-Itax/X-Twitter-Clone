@@ -7,21 +7,21 @@ import emojiIcon from "../../assets/icons/Emoji.svg"
 import scheduleIcon from "../../assets/icons/Schedule.svg"
 function TweetEditorButton() {
   return (
-    <div className="tweet-editor-buttons">
-      <div className="tweet-editor-actions">
-        <button>
+    <div className="tweet-editor-buttons flex items-center justify-between">
+      <div className="tweet-editor-actions flex items-center justify-start gap-4">
+        <button className="bg-transparent border-[none]">
           <img src={mediaIcon} alt="" />
         </button>
-        <button>
+        <button className="bg-transparent border-[none]">
           <img src={gifIcon} alt="" />
         </button>
-        <button>
+        <button className="bg-transparent border-[none]">
           <img src={pollIcon} alt="" />
         </button>
-        <button>
+        <button className="bg-transparent border-[none]">
           <img src={emojiIcon} alt="" />
         </button>
-        <button>
+        <button className="bg-transparent border-[none]">
           <img src={scheduleIcon} alt="" />
         </button>
       </div>

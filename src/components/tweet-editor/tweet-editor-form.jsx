@@ -3,7 +3,7 @@ import TweetEditorButton from "./tweet-editor-button-actions"
 
 function TweetEditorForm() {
   return (
-    <div className="tweet-editor-form">
+    <div className="tweet-editor-form flex-auto flex-[auto]">
       <Input />
       <TweetEditorButton />
     </div>
