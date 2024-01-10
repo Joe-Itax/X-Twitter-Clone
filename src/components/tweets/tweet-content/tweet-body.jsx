@@ -1,7 +1,6 @@
 // import verifiedIcon from '../../../assets/icons/Verified.svg';
-import { Link } from 'react-router-dom';
-import "./style.css"
-
+import { Link } from "react-router-dom";
+import "./style.css";
 
 function TweetBody({
   tweetTitleAuthor,
@@ -9,15 +8,18 @@ function TweetBody({
   dateTime,
   tweetText,
   tweetImage,
-  slug
+  slug,
 }) {
-
   return (
     <div className="tweet-body flex flex-col gap-2">
       <div className="tweet-title flex justify-start items-start gap-2.5 text-base">
-        <Link to={`/${slug}`} className={`tweet-title-author text-base`}>
+        <Link
+          to={`/${slug}`}
+          className={`tweet-title-author text-base flex gap-2 text-white cursor-pointer transition-all duration-[0.3s] ease-[ease-in-out] hover:underline`}
+        >
           <h3>{tweetTitleAuthor}</h3>
-          <svg className="w-[1.2rem] h-auto"
+          <svg
+            className="w-[1.2rem] h-auto cursor-pointer transition-all duration-[0.3s] ease-[ease-in-out]"
             width="24"
             height="24"
             viewBox="0 0 24 24"
@@ -30,19 +32,30 @@ function TweetBody({
             />
           </svg>
         </Link>
-        <div className="tweet-title-details text-[#6e767d]">
-          <Link to={`/${slug}`} className={`username-link`}>
-            <span className="userName">{userName}</span>
+        <div className="tweet-title-details text-[#6e767d] flex items-center justify-center gap-[5px]">
+          <Link
+            to={`/${slug}`}
+            className={`username-link text-inherit hover:no-underline`}
+          >
+            <span className="userName cursor-pointer">{userName}</span>
           </Link>
           <span className="dotSeparate"> . </span>
-          <span className="dateTime">{dateTime}</span>
+          <span className="dateTime cursor-pointer hover:underline">
+            {dateTime}
+          </span>
         </div>
       </div>
       <div className="tweet-text text-[#d9d9d9] text-base">
         <p>{tweetText}</p>
       </div>
       <div className="tweet-image w-full pt-[0.3rem] pb-0 px-0">
-        {tweetImage && <img src={tweetImage} alt="Tweet image" className="max-w-full h-auto border rounded-[50px] border-[#2f3336] border-solid"/>}
+        {tweetImage && (
+          <img
+            src={tweetImage}
+            alt="Tweet image"
+            className="max-w-full h-auto border rounded-[50px] border-[#2f3336] border-solid"
+          />
+        )}
       </div>
     </div>
   );

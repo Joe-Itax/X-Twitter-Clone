@@ -58,7 +58,7 @@
   background-color: rgba(17,221,170, .2); 
 }
 
-.tweet-actions .hoverRetweet:hover svg path,{
+.tweet-actions .hoverRetweet:hover svg path{
   fill: #1DA;
 }
 
@@ -77,45 +77,80 @@
 
 .tweet-actions .isLikedBox:hover .svg-border{
   background-color: rgba(248, 73, 137, .2); 
+}*/
+
+.tweet-actions .hoverReply:hover .svg-border,
+.tweet-actions .hoverShare:hover .svg-border {
+  @apply bg-[rgba(29,155,240,0.2)];
+}
+.tweet-actions .hoverShare:hover svg path,
+.tweet-actions .hoverReply:hover svg path {
+  @apply fill-[#1DA1F2];
+}
+.tweet-actions .hoverReply:hover .hoverReplyText {
+  @apply text-[#1DA1F2];
+}
+.tweet-actions .hoverRetweet:hover .hoverRetweetText {
+  @apply text-[#1DA];
+}
+.tweet-actions .hoverRetweet:hover .svg-border {
+  @apply bg-[rgba(17,221,170,0.2)];
+}
+.tweet-actions .hoverRetweet:hover svg path {
+  @apply fill-[#1DA];
+}
+.tweet-actions .hoverReact:hover .hoverReactText,
+.tweet-actions .hoverReact:hover .svgRemix {
+  @apply text-[rgb(248,73,137)];
+}
+.tweet-actions .isLikedBox .hoverReactText {
+  @apply text-[rgb(248,73,137)];
+}
+.tweet-actions .hoverReact:hover .svg-border {
+  @apply bg-[rgba(248,73,137,0.2)];
+}
+.tweet-actions .isLikedBox:hover .svg-border {
+  @apply bg-[rgba(248,73,137,0.2)];
 }
 
-
 /* Tweet body */
-.tweet-body .tweet-title a{
+/*
+.tweet-body .tweet-title a {
   display: flex;
-  gap:.5rem;
+  gap: 0.5rem;
   color: #fff;
 }
 .tweet-body .tweet-title a,
-.tweet-body .tweet-title svg{
+.tweet-body .tweet-title svg {
   cursor: pointer;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   text-decoration: none;
 }
 
-.tweet-body .tweet-title a:hover{
+.tweet-body .tweet-title a:hover {
   text-decoration: underline;
 }
 
-.tweet-body .tweet-title .tweet-title-details{
+.tweet-body .tweet-title .tweet-title-details {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 5px;
 }
 
-.tweet-body .tweet-title .tweet-title-details .username-link{
+.tweet-body .tweet-title .tweet-title-details .username-link {
   color: inherit;
 }
-.tweet-body .tweet-title .tweet-title-details .username-link:hover{
+.tweet-body .tweet-title .tweet-title-details .username-link:hover {
   text-decoration: none;
 }
 
 .tweet-body .tweet-title .tweet-title-details .userName,
-.tweet-body .tweet-title .tweet-title-details .dateTime{
+.tweet-body .tweet-title .tweet-title-details .dateTime {
   cursor: pointer;
 }
 
-.tweet-body .tweet-title .tweet-title-details .dateTime:hover{
+.tweet-body .tweet-title .tweet-title-details .dateTime:hover {
   text-decoration: underline;
 }
+*/
