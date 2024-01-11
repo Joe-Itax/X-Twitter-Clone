@@ -1,13 +1,12 @@
-// import TweetCreator from './tweet-creator';
-import Tweet from './tweet';
-import TweetData from "../../utils/tweet-data"
-
+import { useContext } from "react";
+import Tweet from "./tweet";
+import globalContext from "../../contexts/global-context";
 
 function Tweets() {
-  const tweetCreator = TweetData.getTweets();
+  const tweetData = useContext(globalContext);
   return (
     <div className="tweets">
-      {tweetCreator.map(tweet => (
+      {tweetData.map((tweet) => (
         <Tweet
           key={tweet.id}
           tweetTitleAuthor={tweet.tweetTitleAuthor}
