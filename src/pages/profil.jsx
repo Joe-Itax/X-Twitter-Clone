@@ -1,11 +1,13 @@
-import { useParams } from 'react-router-dom';
+import { useContext } from "react";
+import { useParams } from "react-router-dom";
 // import TweetData from '../../../utils/tweet-data';
-import TweetData from '../utils/tweet-data';
+import TweetData from "../utils/tweet-data";
+import globalContext from "../contexts/global-context";
 
 function Profil() {
-
   const { slug } = useParams();
   const linkProfils = TweetData.getTweets();
+  // const linkProfils = useContext(globalContext);
   // console.log(linkProfils);
 
   const linkProfil = linkProfils.find((profil) => profil.slug === slug);
@@ -14,7 +16,7 @@ function Profil() {
     <div>
       <div>
         <div className="back-icon">
-          <i class="ri-arrow-left-line"></i>
+          <i className="ri-arrow-left-line"></i>
         </div>
         <div className="title-profil">
           <h2>{linkProfil.tweetTitleAuthor}</h2>
@@ -29,7 +31,7 @@ function Profil() {
       <h2>{linkProfil.tweetText}</h2>
       <img src={linkProfil.tweetAvatar} />
     </div>
-  )
+  );
 }
 
 export default Profil;

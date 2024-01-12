@@ -4,6 +4,7 @@ import globalContext from "../../contexts/global-context";
 
 function Tweets() {
   const tweetData = useContext(globalContext);
+  console.log(tweetData);
   return (
     <div className="tweets">
       {tweetData.map((tweet) => (

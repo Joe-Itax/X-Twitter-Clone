@@ -24,11 +24,11 @@ function ContextProvider({ children }) {
   useEffect(() => {
     setTweets(datas.tweets);
   }, []);
-  console.log(tweets);
+  // console.log(tweets);
   return (
     <>
       <currentUserContext.Provider value={datas.currentUser}>
-        <globalContext.Provider value={tweets}>
+        <globalContext.Provider value={datas.tweets}>
           {children}
         </globalContext.Provider>
       </currentUserContext.Provider>
