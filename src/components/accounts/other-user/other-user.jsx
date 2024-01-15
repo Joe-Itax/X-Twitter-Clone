@@ -37,15 +37,26 @@ function OtherUser() {
           <span className="text-[13px] text-[#71767a]">1,129 posts</span>
         </div>
       </div>
-      <div className="img_profils flex">
-        <div className="couverture">
+      <div className="img_profils flex relative mb-20">
+        <div className="couverture h-[12.5rem] w-full">
           {linkProfil.tweetImage ? (
-            <img src={linkProfil.tweetImage} alt="Photo de couverture" />
+            <img
+              src={linkProfil.tweetImage}
+              alt="Photo de couverture"
+              className="h-full w-full"
+            />
           ) : (
-            <></>
+            <>
+              <div className="bg-[#333639] h-full w-full"></div>
+            </>
           )}
         </div>
-        <div className="profil"></div>
+        <div className="profil absolute left-4 top-full w-32 h-32 rounded-[100%] bg-white -translate-y-2/4">
+          <img
+            src={linkProfil.tweetAvatar}
+            className="w-full h-full rounded-[100%]"
+          />
+        </div>
       </div>
       <h2>{linkProfil.userName}</h2>
       <h2>Pseudo: {linkProfil.pseudo}</h2>
