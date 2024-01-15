@@ -18,14 +18,14 @@ completedColumns:
 ## Todo
 
 - [fonctionnalité-like-button-is-a-toggle](tasks/fonctionnalité-like-button-is-a-toggle.md)
-- [profil-component-template](tasks/profil-component-template.md)
 
 ## In Progress
 
-- [mettre-les-données-des-tweet-dans-un-fichier-json](tasks/mettre-les-données-des-tweet-dans-un-fichier-json.md)
+- [profil-component-template](tasks/profil-component-template.md)
 
 ## Done
 
+- [mettre-les-données-des-tweet-dans-un-fichier-json](tasks/mettre-les-données-des-tweet-dans-un-fichier-json.md)
 - [créer-un-context-global](tasks/créer-un-context-global.md)
-- [fonctionnalité-style-avec-tailwind-css-sur-timeline](tasks/fonctionnalité-style-avec-tailwind-css-sur-timeline.md)
 - [fonctionnalité-source-des-données-initiales](tasks/fonctionnalité-source-des-données-initiales.md)
+- [fonctionnalité-style-avec-tailwind-css-sur-timeline](tasks/fonctionnalité-style-avec-tailwind-css-sur-timeline.md)

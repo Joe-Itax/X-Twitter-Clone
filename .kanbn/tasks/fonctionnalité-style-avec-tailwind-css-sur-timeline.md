@@ -1,15 +1,10 @@
 ---
-created: 2024-01-12T12:47:10.155Z
-updated: 2024-01-12T12:47:10.146Z
+created: 2024-01-15T13:46:03.036Z
+updated: 2024-01-15T13:46:36.469Z
 assigned: ""
 progress: 0
 tags: []
-completed: 2024-01-12T12:47:10.155Z
+completed: 2024-01-15T13:46:36.469Z
 ---
 
-# Fonctionnalité: Style avec Tailwind CSS sur .Timeline
-
-Critères:
-  - les classes de style définies dans le fichier CSS ne sont pas utilisées
-  - le style de cette section n'est faite que par des classes Tailwind CSS
-
+# fonctionnalité-style-avec-tailwind-css-sur-timeline
