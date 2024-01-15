@@ -16,7 +16,7 @@ import "./sidebar.css";
 
 function Sidebar() {
   return (
-    <nav className="nav-sidebar">
+    <nav className="nav-sidebar grow-0 shrink-0 basis-[300px] mdd:basis-[300px]">
       <ul className="nav-links">
         <li>
           <NavLink to="/home" className="logo">

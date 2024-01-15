@@ -10,7 +10,7 @@ function Layout({ children }) {
       {children}
       <div className="right-sidebar" /> */}
       <Sidebar className="left-sidebar" />
-      <main className="border-l border-r border-solid border-[#2f3336]">
+      <main className="timeline border-l border-r border-solid border-[#2f3336] grow-0 shrink-0 basis-[500px] mdd:basis-[800px]">
         <Outlet />
       </main>
       <aside className="right-sidebar">

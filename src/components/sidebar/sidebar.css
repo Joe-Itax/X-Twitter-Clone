@@ -1,7 +1,7 @@
-.nav-sidebar{
+.nav-sidebar {
   height: 100vh;
   /* width: 35%; */
-  flex: 0 0 300px;
+  /* flex: 0 0 300px; */
   position: sticky;
   top: 0;
   display: flex;
@@ -9,73 +9,73 @@
   justify-content: space-between;
 }
 
-.nav-sidebar ul{
-  padding: .5rem 1rem 0 3rem;
+.nav-sidebar ul {
+  padding: 0.5rem 1rem 0 3rem;
 }
 
-.nav-sidebar ul li{
+.nav-sidebar ul li {
   list-style: none;
 }
 
-.nav-sidebar ul li a:not(.nav-sidebar ul li a.post-button){
+.nav-sidebar ul li a:not(.nav-sidebar ul li a.post-button) {
   display: inline-flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  padding: .5rem .7rem;
+  padding: 0.5rem 0.7rem;
   text-decoration: none;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
-.nav-sidebar ul li a:hover{
+.nav-sidebar ul li a:hover {
   border-radius: 2rem;
   background-color: #1c1c1c;
 }
 
-.nav-sidebar ul li a.active{
+.nav-sidebar ul li a.active {
   font-weight: bold;
 }
 
-.nav-sidebar ul li.post-button-li{
+.nav-sidebar ul li.post-button-li {
   width: 100%;
   margin-top: 10px;
 }
 
-.nav-sidebar ul li a.post-button{
+.nav-sidebar ul li a.post-button {
   width: 100%;
-  padding: .5rem 0 .5rem 0;
+  padding: 0.5rem 0 0.5rem 0;
   text-decoration: none;
 }
 
-.nav-sidebar ul li a.post-button .post-button--button{
+.nav-sidebar ul li a.post-button .post-button--button {
   width: 100%;
 }
 
-.nav-sidebar ul li a img{
+.nav-sidebar ul li a img {
   width: 1.5rem;
 }
 
-.nav-sidebar ul li a span{
+.nav-sidebar ul li a span {
   color: #e7e9ea;
   font-size: 1.3rem;
 }
 
-.nav-sidebar .my-profil{
+.nav-sidebar .my-profil {
   display: flex;
   align-items: center;
   gap: 1rem;
   cursor: pointer;
-  padding: .5rem 1rem 1rem 3rem;
+  padding: 0.5rem 1rem 1rem 3rem;
   border-radius: 50px;
   width: 100%;
 }
 
-.nav-sidebar .my-profil:hover{
+.nav-sidebar .my-profil:hover {
   background-color: #1c1c1c;
   /* background: rgba(255, 255, 255, .04); */
 }
 
-.my-profil-title-box{
+.my-profil-title-box {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -83,12 +83,12 @@
   /* background: rgba(255, 255, 255, .04); */
 }
 
-.my-profil-title-box .detail-title-profil{
+.my-profil-title-box .detail-title-profil {
   font-size: 1rem;
   line-height: 20px;
 }
 
-.my-profil-title-box .detail-title-profil .title-profil{
+.my-profil-title-box .detail-title-profil .title-profil {
   font-weight: 700;
 }
 

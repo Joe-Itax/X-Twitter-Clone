@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "react-router-dom": "^6.20.1",
+    "react-router-dom": "^6.21.2",
     "remixicon": "^3.6.0"
   },
   "devDependencies": {

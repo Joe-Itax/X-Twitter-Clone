@@ -1,10 +1,14 @@
 {
-  "currentUser": {},
+  "currentUser": {
+    "profileImage": "../assets/images/profile-photo.png",
+    "couvertureImage": null
+  },
   "tweets": [
     {
       "id": 1,
       "slug": "CNN",
       "tweetTitleAuthor": "CNN",
+      "pseudo": "CNN",
       "userName": "@CNN",
       "dateTime": "7m",
       "tweetText": "President Joe Biden touted a new agreement reached with the European Union to ease Trump-era tariffs on aluminum and steel as a 'major breakthrough' that would serve to both strengthen the US steel industry and combat the global climate crisis.",
@@ -12,12 +16,15 @@
       "retweetValue": "144",
       "reactValue": 184,
       "tweetImage": null,
-      "tweetAvatar": "src/assets/images/tweet-profile-photo.png"
+      "tweetAvatar": "src/assets/images/tweet-profile-photo.png",
+      "profileImage": "src/assets/images/tweet-profile-photo.png",
+      "couvertureImage": null
     },
     {
       "id": 2,
       "slug": "nytimes",
       "tweetTitleAuthor": "The New York Times",
+      "pseudo": "The New York Times",
       "userName": "@nytimes",
       "dateTime": "2h",
       "tweetText": "Gardening boomed during the pandemic. Six Black writers share how it has helped them re-establish, and reimagine, a connection to cultivation and the land",
@@ -25,12 +32,15 @@
       "retweetValue": "48",
       "reactValue": 482,
       "tweetImage": "src/assets/images/tweet-image.png",
-      "tweetAvatar": "src/assets/images/tweet-profile-photo-2.png"
+      "tweetAvatar": "src/assets/images/tweet-profile-photo-2.png",
+      "profileImage": "src/assets/images/tweet-profile-photo-2.png",
+      "couvertureImage": null
     },
     {
       "id": 3,
       "slug": "X",
       "tweetTitleAuthor": "Twitter",
+      "pseudo": "Twitter",
       "userName": "@X",
       "dateTime": "Oct 29",
       "tweetText": "BIG NEWS lol jk still Twitter",
@@ -38,12 +48,15 @@
       "retweetValue": "36.6K",
       "reactValue": 267,
       "tweetImage": null,
-      "tweetAvatar": "src/assets/images/logoX.png"
+      "tweetAvatar": "src/assets/images/logoX.png",
+      "profileImage": "src/assets/images/logoX.png",
+      "couvertureImage": null
     },
     {
       "id": 4,
       "slug": "X",
       "tweetTitleAuthor": "Twitter",
+      "pseudo": "Twitter",
       "userName": "@X",
       "dateTime": "Oct 4",
       "tweetText": "Hello litteraly everyone",
@@ -51,12 +64,15 @@
       "retweetValue": "785.4K",
       "reactValue": 375,
       "tweetImage": null,
-      "tweetAvatar": "src/assets/images/logoX.png"
+      "tweetAvatar": "src/assets/images/logoX.png",
+      "profileImage": "src/assets/images/logoX.png",
+      "couvertureImage": null
     },
     {
       "id": 5,
       "slug": "X",
       "tweetTitleAuthor": "Twitter",
+      "pseudo": "Twitter",
       "userName": "@X",
       "dateTime": "Oct 4",
       "tweetText": "Hello litteraly everyone",
@@ -64,7 +80,9 @@
       "retweetValue": "785.4K",
       "reactValue": 3105,
       "tweetImage": null,
-      "tweetAvatar": "src/assets/images/logoX.png"
+      "tweetAvatar": "src/assets/images/logoX.png",
+      "profileImage": "src/assets/images/logoX.png",
+      "couvertureImage": null
     }
   ]
 }
