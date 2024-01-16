@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./trends.css";
 import Button from "../Buttons/button";
+import FollowBtn from "../Buttons/follow-btn";
 // import Avatar from "../../assets/images/profile-photo.png"
 import Avatar from "../../assets/images/tweet-profile-photo-2.png";
 import Verified from "../../assets/icons/Verified.svg";
@@ -142,11 +143,7 @@ function Trends() {
               </div>
             </Link>
             <div>
-              <Button
-                content="Follow"
-                backgroundColor="#EFF4F4"
-                textColor="#0F1419"
-              />
+              <FollowBtn />
             </div>
           </div>
           <div
@@ -166,11 +163,7 @@ function Trends() {
               </div>
             </Link>
             <div>
-              <Button
-                content="Follow"
-                backgroundColor="#EFF4F4"
-                textColor="#0F1419"
-              />
+              <FollowBtn />
             </div>
           </div>
           <div
@@ -190,11 +183,7 @@ function Trends() {
               </div>
             </Link>
             <div>
-              <Button
-                content="Follow"
-                backgroundColor="#EFF4F4"
-                textColor="#0F1419"
-              />
+              <FollowBtn />
             </div>
           </div>
           <Link to="/i/connect_people" className="show-more">

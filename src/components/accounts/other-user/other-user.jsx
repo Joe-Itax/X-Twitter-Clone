@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 
 import globalContext from "../../../contexts/global-context";
+import FollowBtn from "../../Buttons/follow-btn";
 
 function OtherUser() {
   const navigate = useNavigate();
@@ -37,7 +38,7 @@ function OtherUser() {
           <span className="text-[13px] text-[#71767a]">1,129 posts</span>
         </div>
       </div>
-      <div className="img_profils flex relative mb-20">
+      <div className="img_profils flex flex-col relative mb-20">
         <div className="couverture h-[12.5rem] w-full">
           {linkProfil.tweetImage ? (
             <img
@@ -51,11 +52,19 @@ function OtherUser() {
             </>
           )}
         </div>
-        <div className="profil absolute left-4 top-full w-32 h-32 rounded-[100%] bg-white -translate-y-2/4">
-          <img
-            src={linkProfil.tweetAvatar}
-            className="w-full h-full rounded-[100%]"
-          />
+        <div className="container-profil-photo flex justify-end px-4">
+          <div className="profil absolute left-4 top-full w-32 h-32 rounded-[100%] bg-white -translate-y-2/4">
+            <img
+              src={linkProfil.tweetAvatar}
+              className="w-full h-full rounded-[100%]"
+            />
+          </div>
+          <div className="flex absolute top-[100%] mt-4 items-center gap-2">
+            <div class="icon_more text-[#eff3f4] ">
+              <i class="ri-more-line rounded-[100%] border p-1 border-[#eff3f4] text-[1.5rem] hover:bg-white/10 transition-all duration-[0.3s] ease-[ease-in-out] cursor-pointer"></i>
+            </div>
+            <FollowBtn />
+          </div>
         </div>
       </div>
       <h2>{linkProfil.userName}</h2>
