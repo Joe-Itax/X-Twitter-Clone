@@ -21,7 +21,7 @@ function Trends() {
   };
   return (
     <>
-      <div className="trends grow-0 shrink-0 basis-[250px] md:basis-[350px] lg:basis-[450px]">
+      <div className="trends grow-0 shrink-0 basis-[300px] md:basis-[350px] lg:basis-[400px]">
         <div className="trends-header">
           <div
             className={`trends-header-input bg__gray${

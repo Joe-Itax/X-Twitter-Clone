@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useParams, useNavigate, useLocation, NavLink } from "react-router-dom";
 
 import globalContext from "../../../contexts/global-context";
 import FollowBtn from "../../Buttons/follow-btn";
@@ -24,6 +24,13 @@ function OtherUser() {
       handleScrollToTop();
     }
   }, [location.pathname]);
+
+  function includesActiveAsClassName(asActive) {
+    return asActive.includes("active");
+  }
+
+  // console.log("linkProfil", linkProfil);
+  // console.log("linkProfilssss", linkProfils);
   return (
     <div>
       <div
@@ -69,7 +76,7 @@ function OtherUser() {
           </div>
         </div>
       </div>
-      <div className="info-profil px-4">
+      <div className="info-profil px-4 mb-12">
         <div className="identite mb-3 mt-1">
           <div>
             <span className="text-xl font-extrabold text-[#e7e9ea]">
@@ -120,6 +127,100 @@ function OtherUser() {
           </span>
         </div>
       </div>
+      <nav className="flex items-center justify-center border-b border-solid border-[#2f3336]">
+        <div className="w-full posts">
+          <NavLink
+            to={`/${slug}`}
+            className={`px-4 relative flex flex-col justify-center items-center outline-none h-[53px] transition-all ease-in-out duration-[.2s] hover:bg-[#E7E9EA1A]`}
+          >
+            <div
+              className={`${
+                location.pathname === `/${slug}`
+                  ? "relative font-bold h-full text-[#E7E9EA]"
+                  : "text-[#71767B]"
+              } flex justify-center items-center text-base`}
+            >
+              <span>Posts</span>
+              <div
+                className={`${
+                  location.pathname === `/${slug}`
+                    ? "absolute self-center bg-[#1d9bf0] h-1 bottom-0 inline-flex rounded-br-full rounded-t-full rounded-bl-full w-full min-w-14"
+                    : ""
+                } `}
+              ></div>
+            </div>
+          </NavLink>
+        </div>
+        <div className="w-full Replies">
+          <NavLink
+            to={`/${slug}/with_replies`}
+            className={`px-4 relative flex flex-col justify-center items-center outline-none h-[53px] transition-all ease-in-out duration-[.2s] hover:bg-[#E7E9EA1A]`}
+          >
+            <div
+              className={`${
+                location.pathname === `/${slug}/with_replies`
+                  ? "relative font-bold h-full text-[#E7E9EA]"
+                  : "text-[#71767B]"
+              } flex justify-center items-center text-base`}
+            >
+              <span>Replies</span>
+              <div
+                className={`${
+                  location.pathname === `/${slug}/with_replies`
+                    ? "absolute self-center bg-[#1d9bf0] h-1 bottom-0 inline-flex rounded-br-full rounded-t-full rounded-bl-full w-full min-w-14"
+                    : ""
+                } `}
+              ></div>
+            </div>
+          </NavLink>
+        </div>
+        <div className="w-full Media">
+          <NavLink
+            to={`/${slug}/media`}
+            className={`px-4 relative flex flex-col justify-center items-center outline-none h-[53px] transition-all ease-in-out duration-[.2s] hover:bg-[#E7E9EA1A]`}
+          >
+            <div
+              className={`${
+                location.pathname === `/${slug}/media`
+                  ? "relative font-bold h-full text-[#E7E9EA]"
+                  : "text-[#71767B]"
+              } flex justify-center items-center text-base`}
+            >
+              <span>Media</span>
+              <div
+                className={`${
+                  location.pathname === `/${slug}/media`
+                    ? "absolute self-center bg-[#1d9bf0] h-1 bottom-0 inline-flex rounded-br-full rounded-t-full rounded-bl-full w-full min-w-14"
+                    : ""
+                } `}
+              ></div>
+            </div>
+          </NavLink>
+        </div>
+        <div className="w-full Media">
+          <NavLink
+            to={`/${slug}/likes`}
+            className={`px-4 relative flex flex-col justify-center items-center outline-none h-[53px] transition-all ease-in-out duration-[.2s] hover:bg-[#E7E9EA1A]`}
+          >
+            <div
+              className={`${
+                location.pathname === `/${slug}/likes`
+                  ? "relative font-bold h-full text-[#E7E9EA]"
+                  : "text-[#71767B]"
+              } flex justify-center items-center text-base`}
+            >
+              <span>Likes</span>
+              <div
+                className={`${
+                  location.pathname === `/${slug}/likes`
+                    ? "absolute self-center bg-[#1d9bf0] h-1 bottom-0 inline-flex rounded-br-full rounded-t-full rounded-bl-full w-full min-w-14"
+                    : ""
+                } `}
+              ></div>
+            </div>
+          </NavLink>
+        </div>
+      </nav>
       {/* <h2>{linkProfil.tweetText}</h2>
       <img src={linkProfil.tweetAvatar} /> */}
     </div>
