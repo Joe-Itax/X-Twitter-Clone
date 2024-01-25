@@ -1,6 +1,7 @@
 import { useContext, useEffect } from "react";
 import { useParams, useNavigate, useLocation, NavLink } from "react-router-dom";
 
+import Tweet from "../../tweets/tweet";
 import globalContext from "../../../contexts/global-context";
 import FollowBtn from "../../Buttons/follow-btn";
 
@@ -14,6 +15,10 @@ function OtherUser() {
 
   const linkProfil = linkProfils.find((profil) => profil.slug === slug);
 
+  const tweetsPerso = linkProfils.filter((tweet) => tweet.slug === slug);
+  // tweetsPerso.map((tweet) => {
+  //   console.log(tweet.tweetTitleAuthor);
+  // });
   const location = useLocation();
   useEffect(() => {
     const handleScrollToTop = () => {
@@ -221,8 +226,23 @@ function OtherUser() {
           </NavLink>
         </div>
       </nav>
-      {/* <h2>{linkProfil.tweetText}</h2>
-      <img src={linkProfil.tweetAvatar} /> */}
+      <div className="tweets">
+        {tweetsPerso.map((tweet) => (
+          <Tweet
+            key={tweet.id}
+            tweetTitleAuthor={tweet.tweetTitleAuthor}
+            userName={tweet.userName}
+            dateTime={tweet.dateTime}
+            tweetText={tweet.tweetText}
+            replyValue={tweet.replyValue}
+            retweetValue={tweet.retweetValue}
+            reactValue={tweet.reactValue}
+            tweetImage={tweet.tweetImage}
+            tweetAvatar={tweet.tweetAvatar}
+            slug={tweet.slug}
+          />
+        ))}
+      </div>
     </div>
   );
 }
