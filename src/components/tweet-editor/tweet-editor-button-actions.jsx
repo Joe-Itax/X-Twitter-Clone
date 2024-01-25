@@ -5,7 +5,7 @@ import gifIcon from "../../assets/icons/Gif.svg";
 import pollIcon from "../../assets/icons/Poll.svg";
 import emojiIcon from "../../assets/icons/Emoji.svg";
 import scheduleIcon from "../../assets/icons/Schedule.svg";
-function TweetEditorButton({ submitNewTweet }) {
+function TweetEditorButton({ submitNewTweet, canSubmit }) {
   return (
     <div className="tweet-editor-buttons flex items-center justify-between">
       <div className="tweet-editor-actions flex items-center justify-start gap-4">
@@ -26,11 +26,12 @@ function TweetEditorButton({ submitNewTweet }) {
         </button>
       </div>
       <Button
-        backgroundColor="#1d9bf0"
+        backgroundColor={canSubmit ? "#1d9bf0" : "rgb(29 155 240 / 53%)"}
         content="Tweet"
         textColor="#fff"
         typeButton={"submit"}
         customOnSubmit={submitNewTweet}
+        canSubmitDisabled={canSubmit}
       />
     </div>
   );
