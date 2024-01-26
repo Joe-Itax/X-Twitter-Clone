@@ -7,19 +7,14 @@ function TweetActions({ replyValue, retweetValue, reactValue, shareValue }) {
   const [isLiked, setIsLiked] = useState(false);
 
   const handleClickOnLikeButton = () => {
-    // Déterminez la direction de l'opération
     const currentDirection = direction;
 
-    // Incrémentez ou décrémentez la valeur de "likeTweet"
     const newLike = likeTweet + (currentDirection === "increment" ? 1 : -1);
 
-    // Définissez la nouvelle valeur de "likeTweet"
     setLikeTweet(newLike);
 
-    // Inversez la direction de l'opération
     setDirection(currentDirection === "increment" ? "decrement" : "increment");
 
-    //Rajouter une classe
     setIsLiked(!isLiked);
   };
 

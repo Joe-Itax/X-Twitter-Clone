@@ -5,12 +5,15 @@ import currentUserContext from "../../contexts/current-user-context";
 
 function ContextProvider({ children }) {
   const [datas, setDatas] = useState({ currentUser: {}, tweets: [] });
+  const [tweets, setTweets] = useState([]);
+  // const [currentUser, setCurrentUser] = useState({});
   useEffect(() => {
     const fetchDatas = async () => {
       try {
         const response = await fetch("src/data/initial-data.json");
         const data = await response.json();
         setDatas(data);
+        setTweets(data.tweets);
       } catch (err) {
         console.error("Erreur lors de la recuperation des donnees: ", err);
       }
@@ -19,16 +22,11 @@ function ContextProvider({ children }) {
     fetchDatas();
   }, []);
 
-  const [tweets, setTweets] = useState([]);
-
-  useEffect(() => {
-    setTweets(datas.tweets);
-  }, []);
-  // console.log(tweets);
+  // console.log(tweets)
   return (
     <>
       <currentUserContext.Provider value={datas.currentUser}>
-        <globalContext.Provider value={datas.tweets}>
+        <globalContext.Provider value={{ tweets, setTweets }}>
           {children}
         </globalContext.Provider>
       </currentUserContext.Provider>

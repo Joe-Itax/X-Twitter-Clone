@@ -11,7 +11,8 @@ function OtherUser() {
     navigate(-1);
   };
   const { slug } = useParams();
-  const linkProfils = useContext(globalContext);
+  const { tweets } = useContext(globalContext);
+  const linkProfils = tweets;
 
   const linkProfil = linkProfils.find((profil) => profil.slug === slug);
 
@@ -139,19 +140,17 @@ function OtherUser() {
             className={`px-4 relative flex flex-col justify-center items-center outline-none h-[53px] transition-all ease-in-out duration-[.2s] hover:bg-[#E7E9EA1A]`}
           >
             <div
-              className={`${
-                location.pathname === `/${slug}`
+              className={`${location.pathname === `/${slug}`
                   ? "relative font-bold h-full text-[#E7E9EA]"
                   : "text-[#71767B]"
-              } flex justify-center items-center text-base`}
+                } flex justify-center items-center text-base`}
             >
               <span>Posts</span>
               <div
-                className={`${
-                  location.pathname === `/${slug}`
+                className={`${location.pathname === `/${slug}`
                     ? "absolute self-center bg-[#1d9bf0] h-1 bottom-0 inline-flex rounded-br-full rounded-t-full rounded-bl-full w-full min-w-14"
                     : ""
-                } `}
+                  } `}
               ></div>
             </div>
           </NavLink>
@@ -162,19 +161,17 @@ function OtherUser() {
             className={`px-4 relative flex flex-col justify-center items-center outline-none h-[53px] transition-all ease-in-out duration-[.2s] hover:bg-[#E7E9EA1A]`}
           >
             <div
-              className={`${
-                location.pathname === `/${slug}/with_replies`
+              className={`${location.pathname === `/${slug}/with_replies`
                   ? "relative font-bold h-full text-[#E7E9EA]"
                   : "text-[#71767B]"
-              } flex justify-center items-center text-base`}
+                } flex justify-center items-center text-base`}
             >
               <span>Replies</span>
               <div
-                className={`${
-                  location.pathname === `/${slug}/with_replies`
+                className={`${location.pathname === `/${slug}/with_replies`
                     ? "absolute self-center bg-[#1d9bf0] h-1 bottom-0 inline-flex rounded-br-full rounded-t-full rounded-bl-full w-full min-w-14"
                     : ""
-                } `}
+                  } `}
               ></div>
             </div>
           </NavLink>
@@ -185,19 +182,17 @@ function OtherUser() {
             className={`px-4 relative flex flex-col justify-center items-center outline-none h-[53px] transition-all ease-in-out duration-[.2s] hover:bg-[#E7E9EA1A]`}
           >
             <div
-              className={`${
-                location.pathname === `/${slug}/media`
+              className={`${location.pathname === `/${slug}/media`
                   ? "relative font-bold h-full text-[#E7E9EA]"
                   : "text-[#71767B]"
-              } flex justify-center items-center text-base`}
+                } flex justify-center items-center text-base`}
             >
               <span>Media</span>
               <div
-                className={`${
-                  location.pathname === `/${slug}/media`
+                className={`${location.pathname === `/${slug}/media`
                     ? "absolute self-center bg-[#1d9bf0] h-1 bottom-0 inline-flex rounded-br-full rounded-t-full rounded-bl-full w-full min-w-14"
                     : ""
-                } `}
+                  } `}
               ></div>
             </div>
           </NavLink>
@@ -208,19 +203,17 @@ function OtherUser() {
             className={`px-4 relative flex flex-col justify-center items-center outline-none h-[53px] transition-all ease-in-out duration-[.2s] hover:bg-[#E7E9EA1A]`}
           >
             <div
-              className={`${
-                location.pathname === `/${slug}/likes`
+              className={`${location.pathname === `/${slug}/likes`
                   ? "relative font-bold h-full text-[#E7E9EA]"
                   : "text-[#71767B]"
-              } flex justify-center items-center text-base`}
+                } flex justify-center items-center text-base`}
             >
               <span>Likes</span>
               <div
-                className={`${
-                  location.pathname === `/${slug}/likes`
+                className={`${location.pathname === `/${slug}/likes`
                     ? "absolute self-center bg-[#1d9bf0] h-1 bottom-0 inline-flex rounded-br-full rounded-t-full rounded-bl-full w-full min-w-14"
                     : ""
-                } `}
+                  } `}
               ></div>
             </div>
           </NavLink>

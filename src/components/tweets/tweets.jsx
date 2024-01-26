@@ -3,11 +3,10 @@ import Tweet from "./tweet";
 import globalContext from "../../contexts/global-context";
 
 function Tweets() {
-  const tweetData = useContext(globalContext);
-  // console.log(tweetData);
+  const { tweets } = useContext(globalContext);
   return (
     <div className="tweets">
-      {tweetData.map((tweet) => (
+      {tweets.map((tweet) => (
         <Tweet
           key={tweet.id}
           tweetTitleAuthor={tweet.tweetTitleAuthor}
