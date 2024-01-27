@@ -29,7 +29,6 @@ function TweetActions({ replyValue, retweetValue, reactValue, shareValue, tweet 
       tweet.isLiked = false;
       setDirection("increment");
     }
-    console.log(tweets)
 
     setLikeTweet(newLike);
 
