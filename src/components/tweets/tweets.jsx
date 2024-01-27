@@ -19,6 +19,8 @@ function Tweets() {
           tweetImage={tweet.tweetImage}
           tweetAvatar={tweet.tweetAvatar}
           slug={tweet.slug}
+          isLiked={tweet.isLiked}
+          tweet={tweet}
         />
       ))}
     </div>

@@ -31,12 +31,7 @@ function OtherUser() {
     }
   }, [location.pathname]);
 
-  function includesActiveAsClassName(asActive) {
-    return asActive.includes("active");
-  }
 
-  // console.log("linkProfil", linkProfil);
-  // console.log("linkProfilssss", linkProfils);
   return (
     <div>
       <div
@@ -141,15 +136,15 @@ function OtherUser() {
           >
             <div
               className={`${location.pathname === `/${slug}`
-                  ? "relative font-bold h-full text-[#E7E9EA]"
-                  : "text-[#71767B]"
+                ? "relative font-bold h-full text-[#E7E9EA]"
+                : "text-[#71767B]"
                 } flex justify-center items-center text-base`}
             >
               <span>Posts</span>
               <div
                 className={`${location.pathname === `/${slug}`
-                    ? "absolute self-center bg-[#1d9bf0] h-1 bottom-0 inline-flex rounded-br-full rounded-t-full rounded-bl-full w-full min-w-14"
-                    : ""
+                  ? "absolute self-center bg-[#1d9bf0] h-1 bottom-0 inline-flex rounded-br-full rounded-t-full rounded-bl-full w-full min-w-14"
+                  : ""
                   } `}
               ></div>
             </div>
@@ -162,15 +157,15 @@ function OtherUser() {
           >
             <div
               className={`${location.pathname === `/${slug}/with_replies`
-                  ? "relative font-bold h-full text-[#E7E9EA]"
-                  : "text-[#71767B]"
+                ? "relative font-bold h-full text-[#E7E9EA]"
+                : "text-[#71767B]"
                 } flex justify-center items-center text-base`}
             >
               <span>Replies</span>
               <div
                 className={`${location.pathname === `/${slug}/with_replies`
-                    ? "absolute self-center bg-[#1d9bf0] h-1 bottom-0 inline-flex rounded-br-full rounded-t-full rounded-bl-full w-full min-w-14"
-                    : ""
+                  ? "absolute self-center bg-[#1d9bf0] h-1 bottom-0 inline-flex rounded-br-full rounded-t-full rounded-bl-full w-full min-w-14"
+                  : ""
                   } `}
               ></div>
             </div>
@@ -183,15 +178,15 @@ function OtherUser() {
           >
             <div
               className={`${location.pathname === `/${slug}/media`
-                  ? "relative font-bold h-full text-[#E7E9EA]"
-                  : "text-[#71767B]"
+                ? "relative font-bold h-full text-[#E7E9EA]"
+                : "text-[#71767B]"
                 } flex justify-center items-center text-base`}
             >
               <span>Media</span>
               <div
                 className={`${location.pathname === `/${slug}/media`
-                    ? "absolute self-center bg-[#1d9bf0] h-1 bottom-0 inline-flex rounded-br-full rounded-t-full rounded-bl-full w-full min-w-14"
-                    : ""
+                  ? "absolute self-center bg-[#1d9bf0] h-1 bottom-0 inline-flex rounded-br-full rounded-t-full rounded-bl-full w-full min-w-14"
+                  : ""
                   } `}
               ></div>
             </div>
@@ -204,15 +199,15 @@ function OtherUser() {
           >
             <div
               className={`${location.pathname === `/${slug}/likes`
-                  ? "relative font-bold h-full text-[#E7E9EA]"
-                  : "text-[#71767B]"
+                ? "relative font-bold h-full text-[#E7E9EA]"
+                : "text-[#71767B]"
                 } flex justify-center items-center text-base`}
             >
               <span>Likes</span>
               <div
                 className={`${location.pathname === `/${slug}/likes`
-                    ? "absolute self-center bg-[#1d9bf0] h-1 bottom-0 inline-flex rounded-br-full rounded-t-full rounded-bl-full w-full min-w-14"
-                    : ""
+                  ? "absolute self-center bg-[#1d9bf0] h-1 bottom-0 inline-flex rounded-br-full rounded-t-full rounded-bl-full w-full min-w-14"
+                  : ""
                   } `}
               ></div>
             </div>
@@ -233,6 +228,7 @@ function OtherUser() {
             tweetImage={tweet.tweetImage}
             tweetAvatar={tweet.tweetAvatar}
             slug={tweet.slug}
+            tweet={tweet}
           />
         ))}
       </div>

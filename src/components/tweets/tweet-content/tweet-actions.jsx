@@ -1,22 +1,49 @@
-import { useState, useContext } from "react";
-//import './style.css';
+import { useState, useContext, useEffect } from "react";
+import globalContext from "../../../contexts/global-context"
 
-function TweetActions({ replyValue, retweetValue, reactValue, shareValue }) {
+function TweetActions({ replyValue, retweetValue, reactValue, shareValue, tweet }) {
   const [likeTweet, setLikeTweet] = useState(reactValue);
   const [direction, setDirection] = useState("increment");
-  const [isLiked, setIsLiked] = useState(false);
+  let [isLiked, setIsLiked] = useState(tweet.isLiked);
+
+  const { tweets, setTweets } = useContext(globalContext);
+
+  useEffect(() => {
+    setLikeTweet(tweet.reactValue);
+    setIsLiked(tweet.isLiked);
+  }, [tweet, setLikeTweet, setIsLiked]);
+
 
   const handleClickOnLikeButton = () => {
     const currentDirection = direction;
 
-    const newLike = likeTweet + (currentDirection === "increment" ? 1 : -1);
+    let newLike;
+    if (!tweet.isLiked && currentDirection === "increment") {
+      newLike = likeTweet + 1;
+      setIsLiked(isLiked = true);
+      tweet.isLiked = true;
+      setDirection("decrement");
+    } else {
+      newLike = likeTweet - 1;
+      setIsLiked(isLiked = false);
+      tweet.isLiked = false;
+      setDirection("increment");
+    }
+    console.log(tweets)
 
     setLikeTweet(newLike);
 
-    setDirection(currentDirection === "increment" ? "decrement" : "increment");
+    // console.log('currentDirection: ', currentDirection);
+    // console.log('direction: ', direction);
+    // console.log('isLikedddddddd', isLiked);
+    // console.log('tweettttisLikedd', tweet.isLiked);
 
-    setIsLiked(!isLiked);
-  };
+
+    setTweets(tweets.map((t) => {
+      if (t.id === tweet.id) return { ...t, reactValue: newLike, isLiked: isLiked };
+      return t;
+    }));
+  }
 
   return (
     <div className="tweet-actions flex justify-center items-center gap-12 text-[grey] text-base">
@@ -61,12 +88,11 @@ function TweetActions({ replyValue, retweetValue, reactValue, shareValue }) {
         </span>
       </div>
       <div
-        className={`tweet-action hoverReact flex justify-center gap-1.5 cursor-pointer relative${
-          isLiked ? " isLikedBox" : ""
-        }`}
+        className={`tweet-action hoverReact flex justify-center gap-1.5 cursor-pointer relative${tweet.isLiked ? " isLikedBox" : ""
+          }`}
         onClick={handleClickOnLikeButton}
       >
-        {isLiked ? (
+        {tweet.isLiked ? (
           <i
             className={`ri-heart-fill w-5 h-5 transition-all duration-[0.3s] ease-[ease-in-out] text-xl rounded-[50%] text-[rgb(248,73,137)]`}
           ></i>
@@ -75,9 +101,8 @@ function TweetActions({ replyValue, retweetValue, reactValue, shareValue }) {
         )}
         <div className="svg-border absolute top-[-5px] left-[-5px] w-[30px] h-[30px] transition-all duration-[0.3s] ease-[ease-in-out] rounded-[50%]"></div>
         <span
-          className={`hoverReactText transition-all duration-[0.3s] ease-[ease-in-out]${
-            isLiked ? " isLiked" : ""
-          }`}
+          className={`hoverReactText transition-all duration-[0.3s] ease-[ease-in-out]${tweet.isLiked ? " isLiked" : ""
+            }`}
         >
           {likeTweet}
         </span>

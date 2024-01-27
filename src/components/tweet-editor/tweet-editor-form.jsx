@@ -30,6 +30,7 @@ function TweetEditorForm({ }) {
         replyValue: "0",
         retweetValue: "0",
         reactValue: 0,
+        isLiked: false,
         tweetImage: null,
         tweetAvatar: "src/assets/images/tweet-profile-photo.png",
         profileImage: "src/assets/images/tweet-profile-photo.png",
