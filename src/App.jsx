@@ -6,6 +6,7 @@ import ContextProvider from "./components/context-provider/context-provider.jsx"
 import Home from "./pages/home.jsx";
 import Profil from "./pages/profil.jsx";
 import OtherUser from "./components/accounts/other-user/other-user.jsx";
+import Login from "./pages/login"
 import Layout from "./components/layout.jsx";
 // Remix icon
 import "remixicon/fonts/remixicon.css";
@@ -38,6 +39,8 @@ const routes = createBrowserRouter([
       },
     ],
   },
+  {path: "/login",
+    element: <Login />,},
 ]);
 
 export default function App() {

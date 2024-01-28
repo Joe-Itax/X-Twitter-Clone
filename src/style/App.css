@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html{
+  @apply h-full w-full;
+}
+
 body {
   background-color: black;
   color: white;
@@ -9,14 +13,52 @@ body {
   max-width: 1800px;
   font-family: "Inter", sans-serif;
   position: relative;
+  @apply h-full w-full;
 }
 
 #root {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+  @apply h-full w-full;
 }
 
+
+.wave-group {
+  @apply relative;
+}
+.wave-group .input {
+  @apply text-base block w-full pl-[5px] pr-2.5 py-2.5 border-b-[#515151] border-[none] border-b border-solid;
+  background: transparent;
+}
+.wave-group .input:focus {
+  outline: none;
+}
+.wave-group .label {
+  @apply text-[#999] text-lg font-[normal] absolute pointer-events-none flex left-[5px] top-2.5;
+}
+.wave-group .label-char {
+  @apply transition-[0.2s] duration-[ease] ease-[all] delay-[calc(var(--index)_*_0.05s)];
+}
+.wave-group .input:focus ~ label .label-char,
+.wave-group .input:valid ~ label .label-char {
+  @apply -translate-y-5 text-sm text-[#5264AE];
+}
+.wave-group .bar {
+  @apply relative block w-full before:left-2/4 after:right-2/4;
+}
+
+.wave-group .bar:before,
+.wave-group .bar:after {
+  @apply content-[''] h-0.5 w-0 absolute transition-[0.2s] duration-[ease] ease-[all] bottom-px;
+  background: #5264ae;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+.wave-group .input:focus ~ .bar:before,
+.wave-group .input:focus ~ .bar:after {
+  @apply w-6/12;
+}
 /*.timeline {
   flex: 0 0 800px;
   border-left: 1px solid #2f3336;

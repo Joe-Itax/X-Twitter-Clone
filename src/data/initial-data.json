@@ -1,5 +1,9 @@
 {
   "currentUser": {
+    "isLogin": false,
+    "slug": null,
+    "pseudo": null,
+    "userName": null,
     "profileImage": "../assets/images/profile-photo.png",
     "couvertureImage": null
   },
