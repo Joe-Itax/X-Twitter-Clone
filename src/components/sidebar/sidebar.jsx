@@ -1,4 +1,8 @@
+import { useState, useContext } from "react";
+
 import { NavLink } from "react-router-dom";
+
+import currentUserContext from "../../contexts/current-user-context";
 // import twitterLogo from '../../assets/images/logoX.png';
 import twitterLogo from "../../assets/icons/Twitter.svg";
 import homeIcon from "../../assets/icons/Home-Fill.svg";
@@ -15,6 +19,8 @@ import Button from "../Buttons/button";
 import "./sidebar.css";
 
 function Sidebar() {
+  const { currentUser } = useContext(currentUserContext);
+  console.log(currentUser);
   return (
     <nav className="nav-sidebar grow-0 shrink-0 basis-[300px] mdd:basis-[300px]">
       <ul className="nav-links">
@@ -60,7 +66,7 @@ function Sidebar() {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/profil">
+          <NavLink to={`/${currentUser.slug}`}>
             <img src={profilIcon} />
             <span className="link-name">Profil</span>
           </NavLink>
@@ -85,14 +91,14 @@ function Sidebar() {
       <div className="my-profil">
         <div className="my-profil-title-box">
           <div style={{ display: "flex" }}>
-            <img alt="Avatar" src={Avatar} style={{ width: "4rem" }} />
+            <img alt="Avatar" src={currentUser.profileImage} style={{ width: "4rem" }} />
           </div>
           <div className="detail-title-profil">
             <div className="title-profil">
-              <span>Joe Itax</span>
+              <span>{currentUser.pseudo}</span>
               {/* <img alt="" src={verified} style={{ width: "1rem" }} /> */}
             </div>
-            <span className="text-gray">@Joseph_Itakala</span>
+            <span className="text-gray">{currentUser.userName}</span>
           </div>
         </div>
         <div>

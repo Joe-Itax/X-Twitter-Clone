@@ -13,7 +13,6 @@ function Tweet({
   tweetImage,
   tweetAvatar,
   slug,
-  isLiked,
   tweet
 }) {
   return (
@@ -38,7 +37,6 @@ function Tweet({
           reactValue={reactValue}
           shareValue={shareValue}
           tweet={tweet}
-          isLiked={isLiked}
         />
       </div>
     </div>

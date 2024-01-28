@@ -32,10 +32,6 @@ function TweetActions({ replyValue, retweetValue, reactValue, shareValue, tweet 
 
     setLikeTweet(newLike);
 
-    // console.log('currentDirection: ', currentDirection);
-    // console.log('direction: ', direction);
-    // console.log('isLikedddddddd', isLiked);
-    // console.log('tweettttisLikedd', tweet.isLiked);
 
 
     setTweets(tweets.map((t) => {

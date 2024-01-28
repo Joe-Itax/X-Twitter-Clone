@@ -1,24 +1,50 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 
+import { useNavigate } from "react-router-dom"
 
-
-import Home from './home';
+import currentUserContext from "../contexts/current-user-context"
 
 export default function Login() {
   const [userName, setUserName] = useState("");
   const [pseudo, setPseudo] = useState("");
+  const [slug, setSlug] = useState("");
+
+
+  const { currentUser, setCurrentUser } = useContext(currentUserContext);
+
+  // console.log("currentUser: ", currentUser);
+  const navigate = useNavigate();
+
+  const handleChangeUsername = (e) => {
+    const filteredValue = e.target.value.replace(/[^a-zA-Z_]/g, "_");
+    setUserName(filteredValue);
+    setSlug(filteredValue);
+
+  }
 
   const handleClick = (e) => {
     e.preventDefault();
-    console.log(userName);
-    console.log(pseudo);
-    setUserName("");
-    setPseudo("");
+
+
+
+    console.log("slug: ", slug)
+
+    const newCurrentUser = {
+      ...currentUser,
+      pseudo: `${pseudo}`,
+      userName: `@${userName}`,
+      slug,
+      isLogin: true,
+    };
+    navigate("/home");
+
+
+    setCurrentUser(newCurrentUser);
   }
 
   return (
-    <div className="login h-full w-full relative flex justify-center items-center">
-      <form onSubmit={handleClick} className="text-[#fff] p-4">
+    <div className="login h-full w-full relative flex justify-center items-center pt-[20%]">
+      <form onSubmit={handleClick} className="text-[#fff] p-4 ">
         <div className="space-y-12">
 
           <div className="border-b border-gray-900/10 pb-12">
@@ -26,7 +52,7 @@ export default function Login() {
 
             <div className="">
               <div className="wave-group sm:col-span-3 mb-8 username">
-                <input required type="text" className="input w-full" id="username" value={userName} onChange={e=> setUserName(e.target.value)} />
+                <input required type="text" className="input w-full" id="username" value={userName} onChange={handleChangeUsername} autocomplete="off" />
                 <span className="bar" />
                 <label className="label" htmlFor="username">
                   <>
@@ -43,7 +69,7 @@ export default function Login() {
               </div>
 
               <div className="wave-group sm:col-span-3 pseudo">
-                <input required type="text" className="input w-full" id="pseudo" value={pseudo} onChange={e=> setPseudo(e.target.value)} />
+                <input required type="text" className="input w-full" id="pseudo" value={pseudo} onChange={e => setPseudo(e.target.value)} autocomplete="off" />
                 <span className="bar" />
                 <label className="label" htmlFor="pseudo">
                   <>

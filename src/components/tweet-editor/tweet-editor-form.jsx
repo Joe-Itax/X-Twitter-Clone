@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 import globalContext from "../../contexts/global-context"
+import currentUserContext from "../../contexts/current-user-context"
 
 import Input from "./input-tweet-editor-form";
 import TweetEditorButton from "./tweet-editor-button-actions";
@@ -11,6 +12,7 @@ function TweetEditorForm({ }) {
   const [newTweetContent, setNewTweetContent] = useState("");
   const [canSubmit, setCanSubmit] = useState(false);
   const { tweets } = useContext(globalContext);
+  const { currentUser } = useContext(currentUserContext);
 
   const navigate = useNavigate();
 
@@ -21,10 +23,10 @@ function TweetEditorForm({ }) {
       const newTweetId = Math.max(...tweets.map((tweet) => tweet.id)) + 1;
       const newTweet = {
         id: newTweetId,
-        slug: "CNN",
-        tweetTitleAuthor: "CNN",
-        pseudo: "CNN",
-        userName: "@CNN",
+        slug: currentUser.slug,
+        tweetTitleAuthor: currentUser.pseudo,
+        pseudo: currentUser.pseudo,
+        userName: currentUser.userName,
         dateTime: "1m",
         tweetText: newTweetContent,
         replyValue: "0",
@@ -32,8 +34,8 @@ function TweetEditorForm({ }) {
         reactValue: 0,
         isLiked: false,
         tweetImage: null,
-        tweetAvatar: "src/assets/images/tweet-profile-photo.png",
-        profileImage: "src/assets/images/tweet-profile-photo.png",
+        tweetAvatar: currentUser.profileImage,
+        profileImage: currentUser.profileImage,
         couvertureImage: null,
       };
 
