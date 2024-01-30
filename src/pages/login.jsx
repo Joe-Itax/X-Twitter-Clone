@@ -2,6 +2,8 @@ import { useState, useContext } from "react"
 
 import { useNavigate } from "react-router-dom"
 
+import {useForm} from "react-hook-form"
+
 import currentUserContext from "../contexts/current-user-context"
 
 export default function Login() {
@@ -19,7 +21,6 @@ export default function Login() {
     const filteredValue = e.target.value.replace(/[^a-zA-Z_]/g, "_");
     setUserName(filteredValue);
     setSlug(filteredValue);
-
   }
 
   const handleClick = (e) => {
@@ -27,7 +28,6 @@ export default function Login() {
 
 
 
-    console.log("slug: ", slug)
 
     const newCurrentUser = {
       ...currentUser,
