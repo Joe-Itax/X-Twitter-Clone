@@ -2,7 +2,7 @@ import { useState, useContext } from "react"
 
 import { useNavigate } from "react-router-dom"
 
-import {useForm} from "react-hook-form"
+import { useForm } from "react-hook-form"
 
 import currentUserContext from "../contexts/current-user-context"
 
@@ -42,9 +42,15 @@ export default function Login() {
     setCurrentUser(newCurrentUser);
   }
 
+  const { register, handleSubmit, formState: { errors } } = useForm();
+
+  const onSubmit = (data) => {
+    console.log("data: ", data);
+  }
+
   return (
     <div className="login h-full w-full relative flex justify-center items-center pt-[20%]">
-      <form onSubmit={handleClick} className="text-[#fff] p-4 ">
+      <form onSubmit={handleSubmit(onSubmit)} className="text-[#fff] p-4" noValidate>
         <div className="space-y-12">
 
           <div className="border-b border-gray-900/10 pb-12">
@@ -52,7 +58,21 @@ export default function Login() {
 
             <div className="">
               <div className="wave-group sm:col-span-3 mb-8 username">
-                <input required type="text" className="input w-full" id="username" value={userName} onChange={handleChangeUsername} autocomplete="off" />
+                <input required name="username" type="text" className="input w-full" id="username" {...register("username", {
+                  required: "Ce champ est obligatoire",
+                  minLength: {
+                    value: 3,
+                    message: "Le Username doit contenir au moins 3 caractères",
+                  },
+                  maxLength: {
+                    value: 25,
+                    message: "Le Username doit contenir au maximum 25 caractères",
+                  },
+                  pattern: {
+                    value: /^[a-zA-Z_]+$/,
+                    message: "Le Username ne doit contenir que des caractères alphanumériques et le caractère '_' (le soulignement du bas)",
+                  }
+                })} autoComplete="off" />
                 <span className="bar" />
                 <label className="label" htmlFor="username">
                   <>
@@ -66,10 +86,11 @@ export default function Login() {
                     <span className="label-char" style={{ "--index": 7 }}>e</span>
                   </>
                 </label>
+                <span className="text-red-400">{errors.username?.message}</span>
               </div>
 
               <div className="wave-group sm:col-span-3 pseudo">
-                <input required type="text" className="input w-full" id="pseudo" value={pseudo} onChange={e => setPseudo(e.target.value)} autocomplete="off" />
+                <input required type="text" className="input w-full" id="pseudo" value={pseudo} onChange={e => setPseudo(e.target.value)} autoComplete="off" />
                 <span className="bar" />
                 <label className="label" htmlFor="pseudo">
                   <>
