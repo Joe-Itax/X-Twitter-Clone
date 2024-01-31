@@ -44,8 +44,9 @@ export default function Login() {
 
   const { register, handleSubmit, formState: { errors } } = useForm();
 
-  const onSubmit = (data) => {
+  const onSubmit = (data, e) => {
     console.log("data: ", data);
+    e.target.reset();
   }
 
   return (
@@ -86,11 +87,21 @@ export default function Login() {
                     <span className="label-char" style={{ "--index": 7 }}>e</span>
                   </>
                 </label>
-                <span className="text-red-400">{errors.username?.message}</span>
+                {errors.username?.message && <p className="text-red-500 text-sm">{errors.username?.message}</p>}
               </div>
 
               <div className="wave-group sm:col-span-3 pseudo">
-                <input required type="text" className="input w-full" id="pseudo" value={pseudo} onChange={e => setPseudo(e.target.value)} autoComplete="off" />
+                <input required type="text" className="input w-full" id="pseudo" {...register("pseudo", {
+                  required: "Ce champ est obligatoire",
+                  minLength: {
+                    value: 3,
+                    message: "Le Pseudo doit contenir au moins 3 caractères",
+                  },
+                  maxLength: {
+                    value: 25,
+                    message: "Le Pseudo doit contenir au maximum 25 caractères",
+                  },
+                })} autoComplete="off" />
                 <span className="bar" />
                 <label className="label" htmlFor="pseudo">
                   <>
@@ -102,6 +113,7 @@ export default function Login() {
                     <span className="label-char" style={{ "--index": 5 }}>o</span>
                   </>
                 </label>
+                {errors.pseudo?.message && <p className="text-red-500 text-sm">{errors.pseudo?.message}</p>}
               </div>
 
 
