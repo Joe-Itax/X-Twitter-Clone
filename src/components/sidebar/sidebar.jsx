@@ -20,7 +20,6 @@ import "./sidebar.css";
 
 function Sidebar() {
   const { currentUser } = useContext(currentUserContext);
-  console.log(currentUser);
   return (
     <nav className="nav-sidebar grow-0 shrink-0 basis-[300px] mdd:basis-[300px]">
       <ul className="nav-links">

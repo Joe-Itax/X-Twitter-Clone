@@ -45,9 +45,17 @@ export default function Login() {
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = (data, e) => {
-    console.log("data: ", data);
     e.target.reset();
-  }
+    const newCurrentUser = {
+      ...currentUser,
+      pseudo: `${data.pseudo}`,
+      userName: `@${data.username}`,
+      slug: data.username,
+      isLogin: true,
+    };
+    setCurrentUser(newCurrentUser);
+    navigate("/home");
+  };
 
   return (
     <div className="login h-full w-full relative flex justify-center items-center pt-[20%]">
@@ -70,7 +78,7 @@ export default function Login() {
                     message: "Le Username doit contenir au maximum 25 caractères",
                   },
                   pattern: {
-                    value: /^[a-zA-Z_]+$/,
+                    value: /^[0-9a-zA-Z_]+$/,
                     message: "Le Username ne doit contenir que des caractères alphanumériques et le caractère '_' (le soulignement du bas)",
                   }
                 })} autoComplete="off" />
