@@ -13,7 +13,7 @@ function Home() {
   const navigate = useNavigate();
 
   if (!currentUser.isLogin) {
-    navigate("/login");
+    //navigate("/login");
   }
   return (
     <>

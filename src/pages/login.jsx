@@ -4,11 +4,13 @@ import { useNavigate } from "react-router-dom"
 
 import { useForm } from "react-hook-form"
 
+import axios from "axios"
+
 import currentUserContext from "../contexts/current-user-context"
 
 export default function Login() {
   const [userName, setUserName] = useState("");
-  const [pseudo, setPseudo] = useState("");
+  // const [pseudo, setPseudo] = useState("");
   const [slug, setSlug] = useState("");
 
 
@@ -17,18 +19,14 @@ export default function Login() {
   // console.log("currentUser: ", currentUser);
   const navigate = useNavigate();
 
-  const handleChangeUsername = (e) => {
+  /*const handleChangeUsername = (e) => {
     const filteredValue = e.target.value.replace(/[^a-zA-Z_]/g, "_");
     setUserName(filteredValue);
     setSlug(filteredValue);
-  }
+  }*/
 
-  const handleClick = (e) => {
+  /*const handleClick = (e) => {
     e.preventDefault();
-
-
-
-
     const newCurrentUser = {
       ...currentUser,
       pseudo: `${pseudo}`,
@@ -37,10 +35,8 @@ export default function Login() {
       isLogin: true,
     };
     navigate("/home");
-
-
     setCurrentUser(newCurrentUser);
-  }
+  }*/
 
   const { register, handleSubmit, formState: { errors } } = useForm();
 
@@ -54,8 +50,18 @@ export default function Login() {
       isLogin: true,
     };
     setCurrentUser(newCurrentUser);
+
+    /*axios.post("https://65b90362b71048505a89fa29.mockapi.io/data", newCurrentUser)
+      .then(response => console.log(response))
+      .catch(error => console.error(error));
+
+    setTimeout(() => {
+      axios.get("https://65b90362b71048505a89fa29.mockapi.io/data")
+        .then(response => console.log("response after put: ", response))
+    }, 3000);*/
     navigate("/home");
   };
+
 
   return (
     <div className="login h-full w-full relative flex justify-center items-center pt-[20%]">
