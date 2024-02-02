@@ -15,7 +15,7 @@ function ContextProvider({ children }) {
         const data = response.data;
         setTweets(data[1].tweets);
         setCurrentUser(data[0].currentUser);
-        console.log("data: ", data)
+        // console.log("data: ", data)
       } catch (err) {
         console.error("Erreur lors de la recuperation des donnees: ", err);
       }
@@ -23,8 +23,8 @@ function ContextProvider({ children }) {
 
     getDatas();
   }, []);
-  console.log("tweets: ", tweets)
-  console.log("currentUser: ", currentUser)
+  // console.log("tweets: ", tweets)
+  // console.log("currentUser: ", currentUser)
 
   return (
     <>

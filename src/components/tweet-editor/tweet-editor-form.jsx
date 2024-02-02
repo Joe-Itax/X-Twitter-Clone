@@ -61,8 +61,6 @@ function TweetEditorForm({ }) {
     }
   }, [errors.new_tweet]);
 
-  console.log("canSubmit errors?.new_tweet?.message:  ", errors?.new_tweet?.message ? true : false)
-  console.log("canSubmit:  ", canSubmit)
 
   const addNewTweet = (e) => {
     e.preventDefault();
@@ -72,7 +70,7 @@ function TweetEditorForm({ }) {
 
 
   const onSubmit = (data) => {
-    console.log("data: ", data)
+    // console.log("data: ", data)
     handleNewTweet(data.new_tweet);
   }
 

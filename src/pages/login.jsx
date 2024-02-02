@@ -9,9 +9,6 @@ import axios from "axios"
 import currentUserContext from "../contexts/current-user-context"
 
 export default function Login() {
-  const [userName, setUserName] = useState("");
-  // const [pseudo, setPseudo] = useState("");
-  const [slug, setSlug] = useState("");
 
 
   const { currentUser, setCurrentUser } = useContext(currentUserContext);

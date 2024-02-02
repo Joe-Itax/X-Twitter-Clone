@@ -14,19 +14,13 @@ function OtherUser() {
   const { slug } = useParams();
   const { tweets } = useContext(globalContext);
   const { currentUser } = useContext(currentUserContext);
-  // console.log(currentUser);
 
-  if (!currentUser.isLogin) {
-    navigate("/login");
-  }
+
   const linkProfils = tweets;
 
   const linkProfil = linkProfils.find((profil) => profil.slug === slug);
 
   const tweetsPerso = linkProfils.filter((tweet) => tweet.slug === slug);
-  // tweetsPerso.map((tweet) => {
-  //   
-  // });
   const location = useLocation();
   useEffect(() => {
     const handleScrollToTop = () => {
@@ -36,10 +30,12 @@ function OtherUser() {
     if (location.pathname.startsWith(`/${slug}`)) {
       handleScrollToTop();
     }
+
+    if (!currentUser.isLogin) {
+      navigate("/login");
+    }
   }, [location.pathname]);
 
-  // console.log(linkProfil);
-  // linkProfil ? console.log(true) : console.log(false);
   if (slug !== currentUser.slug) {
     return (
       <div className="relative h-full">
