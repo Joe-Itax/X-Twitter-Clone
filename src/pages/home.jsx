@@ -14,10 +14,11 @@ function Home() {
 
 
   useEffect(() => {
+    //console.log("currentUser: ", currentUser);
     if (!currentUser.isLogin) {
-      navigate("/login");
+      //navigate("/login");
     }
-  }, []);
+  }, [currentUser]);
   return (
     <>
       <Header />

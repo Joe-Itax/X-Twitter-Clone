@@ -32,7 +32,7 @@ function OtherUser() {
     }
 
     if (!currentUser.isLogin) {
-      navigate("/login");
+      //navigate("/login");
     }
   }, [location.pathname]);
 
