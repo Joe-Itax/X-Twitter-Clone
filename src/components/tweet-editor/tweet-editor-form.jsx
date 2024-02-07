@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 
 import { useForm } from "react-hook-form";
 
+import axios from "axios";
+
 import globalContext from "../../contexts/global-context"
 import currentUserContext from "../../contexts/current-user-context"
 
@@ -45,7 +47,8 @@ function TweetEditorForm({ }) {
 
       tweets.unshift(newTweet);
       //console.log("tweets nouveaux: ", tweets)
-
+      axios.post("https://65b90362b71048505a89fa29.mockapi.io/tweets", newTweet)
+        .then(res => console.log("tweet poster avec succes!!", res));
       //console.log("Nouveau tweet ajouté au context !");
       navigate("/");
     } catch (error) {
@@ -77,23 +80,7 @@ function TweetEditorForm({ }) {
 
   return (
     <form className="tweet-editor-form flex-auto" onSubmit={handleSubmit(onSubmit)}>
-      <input
-        type="text" name="new_tweet" id="new_tweet"
-        placeholder="What's happening?"
-        className="tweet-editor-input h-[60px] w-full text-[1.3rem] bg-[black] text-[white] resize-none mx-0 my-[13px] pt-2.5 pb-0 px-0 border-[none] outline-none"
-        {...register("new_tweet", {
-          required: "Ce champ est obligatoire",
-          maxLength: {
-            value: 180,
-            message: "Le tweet doit contenir au maximum 180 caractères"
-          },
-          pattern: {
-            value: /\S/,
-            message: "Le contenu du tweet ne doit pas être vide ou contenir uniquement des espaces"
-          }
-        })}
-      />
-
+      <Input register={register} />
       <TweetEditorButton canSubmit={canSubmit} />
       {errors.new_tweet?.message && <p className="text-red-500 text-[0.8rem]">{errors.new_tweet.message}</p>}
     </form>

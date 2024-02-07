@@ -21,7 +21,7 @@ function Tweets() {
           slug={tweet.slug}
           tweet={tweet}
         />
-      ))}
+      )).reverse()}
     </div>
   );
 }
