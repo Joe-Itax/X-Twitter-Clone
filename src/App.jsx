@@ -5,7 +5,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ContextProvider from "./components/context-provider/context-provider.jsx";
 import Home from "./pages/home.jsx";
 import Profil from "./pages/profil.jsx";
-import OtherUser from "./components/accounts/other-user/other-user.jsx";
 import Login from "./pages/login"
 import Layout from "./components/layout.jsx";
 // Remix icon
@@ -30,12 +29,6 @@ const routes = createBrowserRouter([
       {
         path: ":slug",
         element: <Profil />,
-        // children: [
-        //   {
-        //     path: '/',
-        //     element: <Navigate replace to=":slug" />,
-        //   }
-        // ]
       },
     ],
   },

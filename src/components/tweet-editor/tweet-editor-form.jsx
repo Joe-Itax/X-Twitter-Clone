@@ -42,10 +42,10 @@ function TweetEditorForm({ }) {
         tweetImage: null,
         tweetAvatar: currentUser.profileImage,
         profileImage: currentUser.profileImage,
-        couvertureImage: null,
+        couvertureImage: currentUser.couvertureImage,
       };
 
-      tweets.unshift(newTweet);
+      tweets.push(newTweet);
       //console.log("tweets nouveaux: ", tweets)
       axios.post("https://65b90362b71048505a89fa29.mockapi.io/tweets", newTweet)
         .then(res => console.log("tweet poster avec succes!!", res));
@@ -63,14 +63,6 @@ function TweetEditorForm({ }) {
       setCanSubmit(true);
     }
   }, [errors.new_tweet]);
-
-
-  const addNewTweet = (e) => {
-    e.preventDefault();
-    handleNewTweet(newTweetContent);
-    setNewTweetContent('');
-  };
-
 
   const onSubmit = (data) => {
     // console.log("data: ", data)

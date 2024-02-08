@@ -34,8 +34,7 @@ function OtherUser() {
     if (!currentUser.isLogin) {
       //navigate("/login");
     }
-  }, [location.pathname]);
-
+  }, [location.pathname, currentUser.isLogin]);
   if (slug !== currentUser.slug) {
     return (
       <div className="relative h-full">
@@ -59,9 +58,9 @@ function OtherUser() {
             </div>
             <div className="img_profils flex flex-col relative mb-20">
               <div className="couverture h-[12.5rem] w-full">
-                {linkProfil.tweetImage ? (
+                {linkProfil.couvertureImage ? (
                   <img
-                    src={linkProfil.tweetImage}
+                    src={linkProfil.couvertureImage}
                     alt="Photo de couverture"
                     className="h-full w-full"
                   />
@@ -267,11 +266,11 @@ function OtherUser() {
         </div>
         <div className="img_profils flex flex-col relative mb-20">
           <div className="couverture h-[12.5rem] w-full">
-            {currentUser.tweetImage ? (
+            {currentUser.couvertureImage ? (
               <img
-                src={linkProfil.tweetImage}
+                src={currentUser.couvertureImage}
                 alt="Photo de couverture"
-                className="h-full w-full"
+                className="h-full w-full object-cover object-center"
               />
             ) : (
               <>
@@ -447,7 +446,7 @@ function OtherUser() {
               slug={tweet.slug}
               tweet={tweet}
             />
-          ))}
+          )).reverse()}
         </div>
 
       </div >
