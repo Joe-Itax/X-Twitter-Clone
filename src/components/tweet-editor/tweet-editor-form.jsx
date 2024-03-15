@@ -49,7 +49,7 @@ function TweetEditorForm({}) {
       tweets.push(newTweet);
       //console.log("tweets nouveaux: ", tweets)
       axios
-        .post("https://65b90362b71048505a89fa29.mockapi.io/tweets", newTweet)
+        .post("http://localhost:3000/tweets", newTweet)
         .then((res) => console.log("tweet poster avec succes!!", res));
       //console.log("Nouveau tweet ajouté au context !");
       navigate("/");
