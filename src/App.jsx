@@ -5,10 +5,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ContextProvider from "./components/context-provider/context-provider.jsx";
 import Home from "./pages/home.jsx";
 import Profil from "./pages/profil.jsx";
-import Login from "./pages/login"
+import Login from "./pages/login";
 import Layout from "./components/layout.jsx";
 // Remix icon
 import "remixicon/fonts/remixicon.css";
+import axios from "axios";
 
 import("./style/reset.css");
 import("./style/App.css");
@@ -32,8 +33,7 @@ const routes = createBrowserRouter([
       },
     ],
   },
-  {path: "/login",
-    element: <Login />,},
+  { path: "/login", element: <Login /> },
 ]);
 
 export default function App() {

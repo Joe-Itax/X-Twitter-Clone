@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import { useParams, useNavigate, useLocation, NavLink } from "react-router-dom";
 
 import Tweet from "../../tweets/tweet";
-import globalContext from "../../../contexts/global-context";
+import globalContext from "../../../contexts/tweets-context";
 import currentUserContext from "../../../contexts/current-user-context";
 import FollowBtn from "../../Buttons/follow-btn";
 
@@ -14,7 +14,6 @@ function OtherUser() {
   const { slug } = useParams();
   const { tweets } = useContext(globalContext);
   const { currentUser } = useContext(currentUserContext);
-
 
   const linkProfils = tweets;
 
@@ -52,7 +51,9 @@ function OtherUser() {
                 ></i>
               </div>
               <div className="title-profil">
-                <h2 className="font-bold text-[#e6e9ea]">{linkProfil.pseudo}</h2>
+                <h2 className="font-bold text-[#e6e9ea]">
+                  {linkProfil.pseudo}
+                </h2>
                 <span className="text-[13px] text-[#71767a]">1,129 posts</span>
               </div>
             </div>
@@ -100,9 +101,9 @@ function OtherUser() {
               </div>
               <div className="description-du-compte mb-3">
                 <span className="text-base font-normal text-[#e7e9ea]">
-                  •Égérie de ECOBANK •Conseillère en image👩🏽‍💻( la mise en valeur de
-                  votre Personal Branding) •Féministe libérale •Juriste 👩🏽‍⚖️( droit
-                  humanitaire)
+                  •Égérie de ECOBANK •Conseillère en image👩🏽‍💻( la mise en valeur
+                  de votre Personal Branding) •Féministe libérale •Juriste 👩🏽‍⚖️(
+                  droit humanitaire)
                 </span>
               </div>
               <div className="joined-on mb-3 flex">
@@ -118,15 +119,21 @@ function OtherUser() {
                     <path d="M7 4V3h2v1h6V3h2v1h1.5C19.89 4 21 5.12 21 6.5v12c0 1.38-1.11 2.5-2.5 2.5h-13C4.12 21 3 19.88 3 18.5v-12C3 5.12 4.12 4 5.5 4H7zm0 2H5.5c-.27 0-.5.22-.5.5v12c0 .28.23.5.5.5h13c.28 0 .5-.22.5-.5v-12c0-.28-.22-.5-.5-.5H17v1h-2V6H9v1H7V6zm0 6h2v-2H7v2zm0 4h2v-2H7v2zm4-4h2v-2h-2v2zm0 4h2v-2h-2v2zm4-4h2v-2h-2v2z"></path>
                   </g>
                 </svg>
-                <span className="text-base text-[#71767b]">Joined December 2020</span>
+                <span className="text-base text-[#71767b]">
+                  Joined December 2020
+                </span>
               </div>
               <div className="follow mb-3 flex gap-5">
                 <div className="following">
-                  <span className="font-bold text-sm text-[#e7e9ea] mr-1">298</span>
+                  <span className="font-bold text-sm text-[#e7e9ea] mr-1">
+                    298
+                  </span>
                   <span className="text-[#71767b] text-sm">Following</span>
                 </div>
                 <div className="followers">
-                  <span className="font-bold text-sm text-[#e7e9ea] mr-1">234</span>
+                  <span className="font-bold text-sm text-[#e7e9ea] mr-1">
+                    234
+                  </span>
                   <span className="text-[#71767b] text-sm">Followers</span>
                 </div>
               </div>
@@ -143,17 +150,19 @@ function OtherUser() {
                   className={`px-4 relative flex flex-col justify-center items-center outline-none h-[53px] transition-all ease-in-out duration-[.2s] hover:bg-[#E7E9EA1A]`}
                 >
                   <div
-                    className={`${location.pathname === `/${slug}`
-                      ? "relative font-bold h-full text-[#E7E9EA]"
-                      : "text-[#71767B]"
-                      } flex justify-center items-center text-base`}
+                    className={`${
+                      location.pathname === `/${slug}`
+                        ? "relative font-bold h-full text-[#E7E9EA]"
+                        : "text-[#71767B]"
+                    } flex justify-center items-center text-base`}
                   >
                     <span>Posts</span>
                     <div
-                      className={`${location.pathname === `/${slug}`
-                        ? "absolute self-center bg-[#1d9bf0] h-1 bottom-0 inline-flex rounded-br-full rounded-t-full rounded-bl-full w-full min-w-14"
-                        : ""
-                        } `}
+                      className={`${
+                        location.pathname === `/${slug}`
+                          ? "absolute self-center bg-[#1d9bf0] h-1 bottom-0 inline-flex rounded-br-full rounded-t-full rounded-bl-full w-full min-w-14"
+                          : ""
+                      } `}
                     ></div>
                   </div>
                 </NavLink>
@@ -164,17 +173,19 @@ function OtherUser() {
                   className={`px-4 relative flex flex-col justify-center items-center outline-none h-[53px] transition-all ease-in-out duration-[.2s] hover:bg-[#E7E9EA1A]`}
                 >
                   <div
-                    className={`${location.pathname === `/${slug}/with_replies`
-                      ? "relative font-bold h-full text-[#E7E9EA]"
-                      : "text-[#71767B]"
-                      } flex justify-center items-center text-base`}
+                    className={`${
+                      location.pathname === `/${slug}/with_replies`
+                        ? "relative font-bold h-full text-[#E7E9EA]"
+                        : "text-[#71767B]"
+                    } flex justify-center items-center text-base`}
                   >
                     <span>Replies</span>
                     <div
-                      className={`${location.pathname === `/${slug}/with_replies`
-                        ? "absolute self-center bg-[#1d9bf0] h-1 bottom-0 inline-flex rounded-br-full rounded-t-full rounded-bl-full w-full min-w-14"
-                        : ""
-                        } `}
+                      className={`${
+                        location.pathname === `/${slug}/with_replies`
+                          ? "absolute self-center bg-[#1d9bf0] h-1 bottom-0 inline-flex rounded-br-full rounded-t-full rounded-bl-full w-full min-w-14"
+                          : ""
+                      } `}
                     ></div>
                   </div>
                 </NavLink>
@@ -185,17 +196,19 @@ function OtherUser() {
                   className={`px-4 relative flex flex-col justify-center items-center outline-none h-[53px] transition-all ease-in-out duration-[.2s] hover:bg-[#E7E9EA1A]`}
                 >
                   <div
-                    className={`${location.pathname === `/${slug}/media`
-                      ? "relative font-bold h-full text-[#E7E9EA]"
-                      : "text-[#71767B]"
-                      } flex justify-center items-center text-base`}
+                    className={`${
+                      location.pathname === `/${slug}/media`
+                        ? "relative font-bold h-full text-[#E7E9EA]"
+                        : "text-[#71767B]"
+                    } flex justify-center items-center text-base`}
                   >
                     <span>Media</span>
                     <div
-                      className={`${location.pathname === `/${slug}/media`
-                        ? "absolute self-center bg-[#1d9bf0] h-1 bottom-0 inline-flex rounded-br-full rounded-t-full rounded-bl-full w-full min-w-14"
-                        : ""
-                        } `}
+                      className={`${
+                        location.pathname === `/${slug}/media`
+                          ? "absolute self-center bg-[#1d9bf0] h-1 bottom-0 inline-flex rounded-br-full rounded-t-full rounded-bl-full w-full min-w-14"
+                          : ""
+                      } `}
                     ></div>
                   </div>
                 </NavLink>
@@ -206,17 +219,19 @@ function OtherUser() {
                   className={`px-4 relative flex flex-col justify-center items-center outline-none h-[53px] transition-all ease-in-out duration-[.2s] hover:bg-[#E7E9EA1A]`}
                 >
                   <div
-                    className={`${location.pathname === `/${slug}/likes`
-                      ? "relative font-bold h-full text-[#E7E9EA]"
-                      : "text-[#71767B]"
-                      } flex justify-center items-center text-base`}
+                    className={`${
+                      location.pathname === `/${slug}/likes`
+                        ? "relative font-bold h-full text-[#E7E9EA]"
+                        : "text-[#71767B]"
+                    } flex justify-center items-center text-base`}
                   >
                     <span>Likes</span>
                     <div
-                      className={`${location.pathname === `/${slug}/likes`
-                        ? "absolute self-center bg-[#1d9bf0] h-1 bottom-0 inline-flex rounded-br-full rounded-t-full rounded-bl-full w-full min-w-14"
-                        : ""
-                        } `}
+                      className={`${
+                        location.pathname === `/${slug}/likes`
+                          ? "absolute self-center bg-[#1d9bf0] h-1 bottom-0 inline-flex rounded-br-full rounded-t-full rounded-bl-full w-full min-w-14"
+                          : ""
+                      } `}
                     ></div>
                   </div>
                 </NavLink>
@@ -241,15 +256,12 @@ function OtherUser() {
               ))}
             </div>
           </>
-
         )}
-      </div >
+      </div>
     );
-  }
-  else {
+  } else {
     return (
       <div className="relative h-full">
-
         <div
           className={`flex py-2 gap-8 items-center cursor-pointer px-2 sticky z-[999] bg-[rgba(0,0,0,0.4)] backdrop-blur-[10px] top-0`}
         >
@@ -326,7 +338,9 @@ function OtherUser() {
                 <path d="M7 4V3h2v1h6V3h2v1h1.5C19.89 4 21 5.12 21 6.5v12c0 1.38-1.11 2.5-2.5 2.5h-13C4.12 21 3 19.88 3 18.5v-12C3 5.12 4.12 4 5.5 4H7zm0 2H5.5c-.27 0-.5.22-.5.5v12c0 .28.23.5.5.5h13c.28 0 .5-.22.5-.5v-12c0-.28-.22-.5-.5-.5H17v1h-2V6H9v1H7V6zm0 6h2v-2H7v2zm0 4h2v-2H7v2zm4-4h2v-2h-2v2zm0 4h2v-2h-2v2zm4-4h2v-2h-2v2z"></path>
               </g>
             </svg>
-            <span className="text-base text-[#71767b]">Joined December 2020</span>
+            <span className="text-base text-[#71767b]">
+              Joined December 2020
+            </span>
           </div>
           <div className="follow mb-3 flex gap-5">
             <div className="following">
@@ -351,17 +365,19 @@ function OtherUser() {
               className={`px-4 relative flex flex-col justify-center items-center outline-none h-[53px] transition-all ease-in-out duration-[.2s] hover:bg-[#E7E9EA1A]`}
             >
               <div
-                className={`${location.pathname === `/${slug}`
-                  ? "relative font-bold h-full text-[#E7E9EA]"
-                  : "text-[#71767B]"
-                  } flex justify-center items-center text-base`}
+                className={`${
+                  location.pathname === `/${slug}`
+                    ? "relative font-bold h-full text-[#E7E9EA]"
+                    : "text-[#71767B]"
+                } flex justify-center items-center text-base`}
               >
                 <span>Posts</span>
                 <div
-                  className={`${location.pathname === `/${slug}`
-                    ? "absolute self-center bg-[#1d9bf0] h-1 bottom-0 inline-flex rounded-br-full rounded-t-full rounded-bl-full w-full min-w-14"
-                    : ""
-                    } `}
+                  className={`${
+                    location.pathname === `/${slug}`
+                      ? "absolute self-center bg-[#1d9bf0] h-1 bottom-0 inline-flex rounded-br-full rounded-t-full rounded-bl-full w-full min-w-14"
+                      : ""
+                  } `}
                 ></div>
               </div>
             </NavLink>
@@ -372,17 +388,19 @@ function OtherUser() {
               className={`px-4 relative flex flex-col justify-center items-center outline-none h-[53px] transition-all ease-in-out duration-[.2s] hover:bg-[#E7E9EA1A]`}
             >
               <div
-                className={`${location.pathname === `/${slug}/with_replies`
-                  ? "relative font-bold h-full text-[#E7E9EA]"
-                  : "text-[#71767B]"
-                  } flex justify-center items-center text-base`}
+                className={`${
+                  location.pathname === `/${slug}/with_replies`
+                    ? "relative font-bold h-full text-[#E7E9EA]"
+                    : "text-[#71767B]"
+                } flex justify-center items-center text-base`}
               >
                 <span>Replies</span>
                 <div
-                  className={`${location.pathname === `/${slug}/with_replies`
-                    ? "absolute self-center bg-[#1d9bf0] h-1 bottom-0 inline-flex rounded-br-full rounded-t-full rounded-bl-full w-full min-w-14"
-                    : ""
-                    } `}
+                  className={`${
+                    location.pathname === `/${slug}/with_replies`
+                      ? "absolute self-center bg-[#1d9bf0] h-1 bottom-0 inline-flex rounded-br-full rounded-t-full rounded-bl-full w-full min-w-14"
+                      : ""
+                  } `}
                 ></div>
               </div>
             </NavLink>
@@ -393,17 +411,19 @@ function OtherUser() {
               className={`px-4 relative flex flex-col justify-center items-center outline-none h-[53px] transition-all ease-in-out duration-[.2s] hover:bg-[#E7E9EA1A]`}
             >
               <div
-                className={`${location.pathname === `/${slug}/media`
-                  ? "relative font-bold h-full text-[#E7E9EA]"
-                  : "text-[#71767B]"
-                  } flex justify-center items-center text-base`}
+                className={`${
+                  location.pathname === `/${slug}/media`
+                    ? "relative font-bold h-full text-[#E7E9EA]"
+                    : "text-[#71767B]"
+                } flex justify-center items-center text-base`}
               >
                 <span>Media</span>
                 <div
-                  className={`${location.pathname === `/${slug}/media`
-                    ? "absolute self-center bg-[#1d9bf0] h-1 bottom-0 inline-flex rounded-br-full rounded-t-full rounded-bl-full w-full min-w-14"
-                    : ""
-                    } `}
+                  className={`${
+                    location.pathname === `/${slug}/media`
+                      ? "absolute self-center bg-[#1d9bf0] h-1 bottom-0 inline-flex rounded-br-full rounded-t-full rounded-bl-full w-full min-w-14"
+                      : ""
+                  } `}
                 ></div>
               </div>
             </NavLink>
@@ -414,42 +434,45 @@ function OtherUser() {
               className={`px-4 relative flex flex-col justify-center items-center outline-none h-[53px] transition-all ease-in-out duration-[.2s] hover:bg-[#E7E9EA1A]`}
             >
               <div
-                className={`${location.pathname === `/${slug}/likes`
-                  ? "relative font-bold h-full text-[#E7E9EA]"
-                  : "text-[#71767B]"
-                  } flex justify-center items-center text-base`}
+                className={`${
+                  location.pathname === `/${slug}/likes`
+                    ? "relative font-bold h-full text-[#E7E9EA]"
+                    : "text-[#71767B]"
+                } flex justify-center items-center text-base`}
               >
                 <span>Likes</span>
                 <div
-                  className={`${location.pathname === `/${slug}/likes`
-                    ? "absolute self-center bg-[#1d9bf0] h-1 bottom-0 inline-flex rounded-br-full rounded-t-full rounded-bl-full w-full min-w-14"
-                    : ""
-                    } `}
+                  className={`${
+                    location.pathname === `/${slug}/likes`
+                      ? "absolute self-center bg-[#1d9bf0] h-1 bottom-0 inline-flex rounded-br-full rounded-t-full rounded-bl-full w-full min-w-14"
+                      : ""
+                  } `}
                 ></div>
               </div>
             </NavLink>
           </div>
         </nav>
         <div className="tweets">
-          {tweetsPerso.map((tweet) => (
-            <Tweet
-              key={tweet.id}
-              tweetTitleAuthor={tweet.tweetTitleAuthor}
-              userName={tweet.userName}
-              dateTime={tweet.dateTime}
-              tweetText={tweet.tweetText}
-              replyValue={tweet.replyValue}
-              retweetValue={tweet.retweetValue}
-              reactValue={tweet.reactValue}
-              tweetImage={tweet.tweetImage}
-              tweetAvatar={tweet.tweetAvatar}
-              slug={tweet.slug}
-              tweet={tweet}
-            />
-          )).reverse()}
+          {tweetsPerso
+            .map((tweet) => (
+              <Tweet
+                key={tweet.id}
+                tweetTitleAuthor={tweet.tweetTitleAuthor}
+                userName={tweet.userName}
+                dateTime={tweet.dateTime}
+                tweetText={tweet.tweetText}
+                replyValue={tweet.replyValue}
+                retweetValue={tweet.retweetValue}
+                reactValue={tweet.reactValue}
+                tweetImage={tweet.tweetImage}
+                tweetAvatar={tweet.tweetAvatar}
+                slug={tweet.slug}
+                tweet={tweet}
+              />
+            ))
+            .reverse()}
         </div>
-
-      </div >
+      </div>
     );
   }
 }
