@@ -13,10 +13,14 @@ function ContextProvider({ children }) {
   useEffect(() => {
     const getDatas = async () => {
       try {
-        const TweetsResponse = await axios.get("http://localhost:3000/tweets");
-        const UsersResponse = await axios.get("http://localhost:3000/users");
+        const TweetsResponse = await axios.get(
+          "https://twitter-clone-api-c2-joe-itax.onrender.com/tweets"
+        );
+        const UsersResponse = await axios.get(
+          "https://twitter-clone-api-c2-joe-itax.onrender.com/users"
+        );
         const currentUserResponse = await axios.get(
-          "http://localhost:3000/users/loggedInUserId"
+          "https://twitter-clone-api-c2-joe-itax.onrender.com/users/loggedInUserId"
         );
         setTweets(TweetsResponse.data.tweets);
         setUsers(UsersResponse.data);
@@ -28,7 +32,7 @@ function ContextProvider({ children }) {
 
     getDatas();
   }, []);
-  // console.log("tweets: ", tweets);
+  // console.log("https://twitter-clone-api-c2-joe-itax.onrender.com/: ");
   // console.log("currentUserId: ", currentUserId);
 
   return (

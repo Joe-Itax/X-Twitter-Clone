@@ -2,7 +2,8 @@ import { useState, useContext, useEffect } from "react";
 
 import { NavLink } from "react-router-dom";
 
-import currentUserContext from "../../contexts/current-user-context";
+import currentUserIdContext from "../../contexts/current-user-context";
+import userContext from "../../contexts/users-context";
 // import twitterLogo from '../../assets/images/logoX.png';
 import twitterLogo from "../../assets/icons/Twitter.svg";
 import homeIcon from "../../assets/icons/Home-Fill.svg";
@@ -19,13 +20,17 @@ import Button from "../Buttons/button";
 import "./sidebar.css";
 
 function Sidebar() {
-  const { currentUser } = useContext(currentUserContext);
+  let { currentUserId } = useContext(currentUserIdContext);
+  currentUserId = currentUserId.loggedInUserId;
+  const { users } = useContext(userContext);
+  // console.log(currentUserId);
+  let currentUserConnected = users.find((user) => user.id == currentUserId);
   const [userData, setUserData] = useState(null);
   useEffect(() => {
-    setUserData(currentUser)
-  }, [currentUser]);
+    setUserData(currentUserConnected);
+  }, [currentUserConnected]);
 
-
+  // console.log("userData: ", userData);
   // if (userData) {
   //   return <div className="loader"></div>
   // } else {
@@ -78,7 +83,9 @@ function Sidebar() {
               </NavLink>
             </li>
             <li>
-              <NavLink to={`/${userData?.slug}`}>
+              <NavLink
+                to={`/${userData?.handle.slice(1, userData?.handle.length)}`}
+              >
                 <img src={profilIcon} />
                 <span className="link-name">Profil</span>
               </NavLink>
@@ -103,14 +110,18 @@ function Sidebar() {
           <div className="my-profil">
             <div className="my-profil-title-box">
               <div style={{ display: "flex", width: "4rem", height: "4rem" }}>
-                <img alt="Avatar" src={userData?.profileImage} style={{ width: "100%", clipPath: "circle(50% at center)" }} />
+                <img
+                  alt="Avatar"
+                  src={userData?.profilePicture}
+                  style={{ width: "100%", clipPath: "circle(50% at center)" }}
+                />
               </div>
               <div className="detail-title-profil">
                 <div className="title-profil">
-                  <span>{userData?.pseudo}</span>
+                  <span>{userData?.name}</span>
                   {/* <img alt="" src={verified} style={{ width: "1rem" }} /> */}
                 </div>
-                <span className="text-gray">{userData?.userName}</span>
+                <span className="text-gray">{userData?.handle}</span>
               </div>
             </div>
             <div>
@@ -120,8 +131,7 @@ function Sidebar() {
         </>
       )}
     </nav>
-  )
-
+  );
 }
 
 export default Sidebar;

@@ -38,11 +38,16 @@ function TweetEditorForm({}) {
 
       tweets.push(newTweet);
       //console.log("tweets nouveaux: ", tweets)
-      axios.post("http://localhost:3000/tweets", newTweet).then((res) => {
-        console.log("tweet poster avec succes!!", res);
-        navigate("/");
-        console.log(tweets);
-      });
+      axios
+        .post(
+          "https://twitter-clone-api-c2-joe-itax.onrender.com/tweets",
+          newTweet
+        )
+        .then((res) => {
+          console.log("tweet poster avec succes!!", res);
+          navigate("/");
+          console.log(tweets);
+        });
       //console.log("Nouveau tweet ajouté au context !");
     } catch (error) {
       console.error("Erreur lors de l'ajout du tweet au Context :", error);
@@ -72,11 +77,16 @@ function TweetEditorForm({}) {
 
       tweets.push(newTweet);
       //console.log("tweets nouveaux: ", tweets)
-      axios.post("http://localhost:3000/tweets", newTweet).then((res) => {
-        console.log("tweet poster avec succes!!", res);
-        navigate("/");
-        console.log(tweets);
-      });
+      axios
+        .post(
+          "https://twitter-clone-api-c2-joe-itax.onrender.com/tweets",
+          newTweet
+        )
+        .then((res) => {
+          console.log("tweet poster avec succes!!", res);
+          navigate("/");
+          console.log(tweets);
+        });
       //console.log("Nouveau tweet ajouté au context !");
     } catch (error) {
       console.error("Erreur lors de l'ajout du tweet au Context :", error);

@@ -8,8 +8,8 @@ function Avatar() {
   const { currentUserId } = useContext(currentUserIdContext);
   const { users } = useContext(userContext);
 
-  const getCurrentUser = users.find(
-    (user) => user.id === currentUserId.loggedInUserId
+  const getCurrentUser = users?.find(
+    (user) => user.id === currentUserId?.loggedInUserId
   );
   // console.log(getCurrentUser);
   const [userData, setUserData] = useState(null);
