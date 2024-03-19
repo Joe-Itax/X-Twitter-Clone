@@ -4,7 +4,6 @@ import Header from "../components/header/header";
 import TweetEditor from "../components/tweet-editor/tweet-editor";
 import Tweets from "../components/tweets/tweets";
 
-
 import currentUserContext from "../contexts/current-user-context";
 
 function Home() {
@@ -12,13 +11,12 @@ function Home() {
 
   const navigate = useNavigate();
 
-
-  useEffect(() => {
+  /* useEffect(() => {
     //console.log("currentUser: ", currentUser);
     if (!currentUser.isLogin) {
       //navigate("/login");
     }
-  }, [currentUser]);
+  }, [currentUser]);*/
   return (
     <>
       <Header />

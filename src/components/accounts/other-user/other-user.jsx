@@ -1,10 +1,15 @@
-import { useContext, useEffect } from "react";
+import { useState, useContext, useEffect } from "react";
 import { useParams, useNavigate, useLocation, NavLink } from "react-router-dom";
 
+import axios from "axios";
+
 import Tweet from "../../tweets/tweet";
-import globalContext from "../../../contexts/tweets-context";
-import currentUserContext from "../../../contexts/current-user-context";
+import currentUserIdContext from "../../../contexts/current-user-context";
+import tweetsContext from "../../../contexts/tweets-context";
+import userContext from "../../../contexts/users-context";
 import FollowBtn from "../../Buttons/follow-btn";
+
+import { formatTimestamp } from "../../../utils/utils-functions";
 
 function OtherUser() {
   const navigate = useNavigate();
@@ -12,12 +17,38 @@ function OtherUser() {
     navigate(-1);
   };
   const { slug } = useParams();
-  const { tweets } = useContext(globalContext);
-  const { currentUser } = useContext(currentUserContext);
+  // const { tweets } = useContext(tweetsContext);
+  const [tweets, setTweets] = useState([]);
+  const { users } = useContext(userContext);
+  let { currentUserId } = useContext(currentUserIdContext);
+  const findUserIdByHandle = (users, slug) => {
+    let userId = null;
+    users.forEach((user) => {
+      if (user.handle === `@${slug}`) {
+        userId = user.id;
+      }
+    });
+    return userId;
+  };
+  const userId = findUserIdByHandle(users, slug);
 
+  // const tweetOfOneUser = tweets.length > 0 && tweets.filter((tweet) => tweet.author === userId);
+  const tweetOfOneUser = tweets.filter((tweet) => tweet.author === userId);
+  // console.log("tweetOfOneUser: ", tweetOfOneUser);
+  // console.log("userId: ", userId);
+  // console.log("users: ", users);
+  // console.log("tweetOfOneUser: ", tweetOfOneUser);
+  // console.log("slug: ", slug);
+  // console.log("users: ", users);
+  // console.log("slug: ", slug);
+  // console.log("slug: ", slug);
   const linkProfils = tweets;
 
-  const linkProfil = linkProfils.find((profil) => profil.slug === slug);
+  // const linkProfil = linkProfils.find((profil) => profil.slug === slug);
+
+  const linkProfil = users.find((user) => user.handle === `@${slug}`);
+
+  // console.log("linkProfil: ", linkProfil);
 
   const tweetsPerso = linkProfils.filter((tweet) => tweet.slug === slug);
   const location = useLocation();
@@ -30,11 +61,15 @@ function OtherUser() {
       handleScrollToTop();
     }
 
-    if (!currentUser.isLogin) {
-      //navigate("/login");
+    try {
+      axios
+        .get(`http://localhost:3000/users/${slug}/tweets`)
+        .then((res) => setTweets(res.data));
+    } catch (err) {
+      console.error(`Erreur lors de la recuperation des données ${err}`);
     }
-  }, [location.pathname, currentUser.isLogin]);
-  if (slug !== currentUser.slug) {
+  }, [location.pathname]);
+  if (slug !== currentUserId.slug) {
     return (
       <div className="relative h-full">
         {!linkProfil ? (
@@ -52,18 +87,20 @@ function OtherUser() {
               </div>
               <div className="title-profil">
                 <h2 className="font-bold text-[#e6e9ea]">
-                  {linkProfil.pseudo}
+                  {linkProfil?.handle}
                 </h2>
-                <span className="text-[13px] text-[#71767a]">1,129 posts</span>
+                <span className="text-[13px] text-[#71767a]">
+                  {tweets.length} post{tweets.length > 1 ? "s" : ""}
+                </span>
               </div>
             </div>
             <div className="img_profils flex flex-col relative mb-20">
               <div className="couverture h-[12.5rem] w-full">
-                {linkProfil.couvertureImage ? (
+                {linkProfil?.profileBackground ? (
                   <img
-                    src={linkProfil.couvertureImage}
+                    src={linkProfil.profileBackground}
                     alt="Photo de couverture"
-                    className="h-full w-full"
+                    className="h-full w-full object-cover"
                   />
                 ) : (
                   <>
@@ -74,7 +111,7 @@ function OtherUser() {
               <div className="container-profil-photo flex justify-end px-4">
                 <div className="profil absolute left-4 top-full w-32 h-32 rounded-[100%] bg-white -translate-y-2/4">
                   <img
-                    src={linkProfil.tweetAvatar}
+                    src={linkProfil?.profilePicture}
                     className="w-full h-full rounded-[100%]"
                   />
                 </div>
@@ -90,20 +127,18 @@ function OtherUser() {
               <div className="identite mb-3 mt-1">
                 <div>
                   <span className="text-xl font-extrabold text-[#e7e9ea]">
-                    {linkProfil.pseudo}
+                    {linkProfil.handle}
                   </span>
                 </div>
                 <div>
                   <span className="text-base text-[#71767b]">
-                    {linkProfil.userName}
+                    {linkProfil.name}
                   </span>
                 </div>
               </div>
               <div className="description-du-compte mb-3">
                 <span className="text-base font-normal text-[#e7e9ea]">
-                  •Égérie de ECOBANK •Conseillère en image👩🏽‍💻( la mise en valeur
-                  de votre Personal Branding) •Féministe libérale •Juriste 👩🏽‍⚖️(
-                  droit humanitaire)
+                  {linkProfil.bio}
                 </span>
               </div>
               <div className="joined-on mb-3 flex">
@@ -120,26 +155,26 @@ function OtherUser() {
                   </g>
                 </svg>
                 <span className="text-base text-[#71767b]">
-                  Joined December 2020
+                  Joined {formatTimestamp(linkProfil.createdAt)}
                 </span>
               </div>
               <div className="follow mb-3 flex gap-5">
                 <div className="following">
                   <span className="font-bold text-sm text-[#e7e9ea] mr-1">
-                    298
+                    {linkProfil.followingCount}
                   </span>
                   <span className="text-[#71767b] text-sm">Following</span>
                 </div>
                 <div className="followers">
                   <span className="font-bold text-sm text-[#e7e9ea] mr-1">
-                    234
+                    {linkProfil.followersCount}
                   </span>
                   <span className="text-[#71767b] text-sm">Followers</span>
                 </div>
               </div>
               <div className="followers">
                 <span className="text-[#71767b] text-sm">
-                  Not followed by anyone following
+                  Location: {linkProfil.location}
                 </span>
               </div>
             </div>
@@ -238,22 +273,26 @@ function OtherUser() {
               </div>
             </nav>
             <div className="tweets">
-              {tweetsPerso.map((tweet) => (
-                <Tweet
-                  key={tweet.id}
-                  tweetTitleAuthor={tweet.tweetTitleAuthor}
-                  userName={tweet.userName}
-                  dateTime={tweet.dateTime}
-                  tweetText={tweet.tweetText}
-                  replyValue={tweet.replyValue}
-                  retweetValue={tweet.retweetValue}
-                  reactValue={tweet.reactValue}
-                  tweetImage={tweet.tweetImage}
-                  tweetAvatar={tweet.tweetAvatar}
-                  slug={tweet.slug}
-                  tweet={tweet}
-                />
-              ))}
+              {tweetOfOneUser.map((tweet) => {
+                let author = users.find((user) => user.id === tweet.author);
+                // console.log(author:);
+                return (
+                  <Tweet
+                    key={tweet.id}
+                    tweetTitleAuthor={author.name}
+                    userName={author.handle}
+                    dateTime={formatTimestamp(tweet.createdAt)}
+                    tweetText={tweet.text}
+                    replyValue={tweet.repliesCount}
+                    retweetValue={tweet.retweetCount}
+                    reactValue={tweet.favoriteCount}
+                    tweetImage={tweet.media.length >= 0 && tweet.media[0]}
+                    tweetAvatar={author.profilePicture}
+                    slug={slug}
+                    tweet={tweet}
+                  />
+                );
+              })}
             </div>
           </>
         )}
@@ -272,15 +311,15 @@ function OtherUser() {
             ></i>
           </div>
           <div className="title-profil">
-            <h2 className="font-bold text-[#e6e9ea]">{currentUser.pseudo}</h2>
+            <h2 className="font-bold text-[#e6e9ea]">{currentUserId.pseudo}</h2>
             <span className="text-[13px] text-[#71767a]">1,129 posts</span>
           </div>
         </div>
         <div className="img_profils flex flex-col relative mb-20">
           <div className="couverture h-[12.5rem] w-full">
-            {currentUser.couvertureImage ? (
+            {currentUserId.couvertureImage ? (
               <img
-                src={currentUser.couvertureImage}
+                src={currentUserId.couvertureImage}
                 alt="Photo de couverture"
                 className="h-full w-full object-cover object-center"
               />
@@ -293,7 +332,7 @@ function OtherUser() {
           <div className="container-profil-photo flex justify-end px-4">
             <div className="profil absolute left-4 top-full w-32 h-32 rounded-[100%] bg-white -translate-y-2/4">
               <img
-                src={currentUser.profileImage}
+                src={currentUserId.profileImage}
                 className="w-full h-full rounded-[100%]"
               />
             </div>
@@ -309,12 +348,12 @@ function OtherUser() {
           <div className="identite mb-3 mt-1">
             <div>
               <span className="text-xl font-extrabold text-[#e7e9ea]">
-                {currentUser.pseudo}
+                {currentUserId.pseudo}
               </span>
             </div>
             <div>
               <span className="text-base text-[#71767b]">
-                {currentUser.userName}
+                {currentUserId.userName}
               </span>
             </div>
           </div>
